@@ -1,0 +1,753 @@
+\hypertarget{classDigTech_1_1Database_1_1MySQL_1_1Record}{}\doxysection{Dig\+Tech\textbackslash{}Database\textbackslash{}My\+SQL\textbackslash{}Record Class Reference}
+\label{classDigTech_1_1Database_1_1MySQL_1_1Record}\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+
+
+Inheritance diagram for Dig\+Tech\textbackslash{}Database\textbackslash{}My\+SQL\textbackslash{}Record\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classDigTech_1_1Database_1_1MySQL_1_1Record__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dig\+Tech\textbackslash{}Database\textbackslash{}My\+SQL\textbackslash{}Record\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classDigTech_1_1Database_1_1MySQL_1_1Record__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Record_aa692432d6927e004bfe19047fe82fd5e}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a1116d3ef12239babc2081157a834e8d0}{get}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Get the value of a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a45157910d2302a3c2a762ddbc87fdcf8}{set}} (\$column\+Name, \$value)
+\begin{DoxyCompactList}\small\item\em Set the value of a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_aa48acad1b0c68c342690e29c0f517203}{set\+Key}} (\$column\+Name, \$value)
+\begin{DoxyCompactList}\small\item\em Set the value of a key field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a120718eaac5f0d4cc6200549e895a42b}{is\+Key\+Column}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Check of column is in primary key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a54bc8648dd58bd01a66c563969b534eb}{build\+Key\+String}} (\$keys=null)
+\begin{DoxyCompactList}\small\item\em Build string for SQL WHERE to retrieve by primary key or keys parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_ab744b2fb609f85a812c5abb3c1c7b95c}{get\+Dirty}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Check of column is dirty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a02681e7cd07c458ed11c828ff6b00a36}{set\+Dirty}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Set column is dirty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a2422dece7a24d8554c3c2ea7adddeb69}{clear\+Dirty}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Clear column dirty flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a5105ecd6b9c4d972d99a581d66d2e093}{is\+Dirty}} ()
+\begin{DoxyCompactList}\small\item\em Check if record is dirty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_aedd13f04877ebaeb182d9ae95358f10c}{reset\+Dirty}} ()
+\begin{DoxyCompactList}\small\item\em Reset dirty flags for the record. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a5e80f6e61acfec04388a67610ec28aad}{set\+Read\+Only}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Set the read-\/only flag for a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a6ec11b0b074ea5ea8a9e2fc3653dbc4d}{clear\+Read\+Only}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Clear the read-\/only flag for a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a21d2cd4a4e99969f5d4113aae21a5195}{is\+Read\+Only}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Get the read-\/only flag for a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_af3a6b46c97b24afeda415f7c9b8d559f}{set\+No\+Quote}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Set the no quote flag for a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a519987612778edd95dad207401ddfe1e}{clear\+No\+Quote}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Clear the no quote flag for a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a0f2476f4697e7933dda4849a0363a55e}{is\+No\+Quote}} (\$column\+Name)
+\begin{DoxyCompactList}\small\item\em Get the no quote flag for a column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_adffae4f9b57cd438ec7be6dbf89776d9}{is\+System\+Column}} (\$col)
+\begin{DoxyCompactList}\small\item\em Is this a system/administrative column? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a94fc822210fa580b7f0ac83c6bb3e343}{copy\+Record}} ()
+\begin{DoxyCompactList}\small\item\em Copy this object to another onea. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a8f9c62263491e9d4c6a290bfe0cbd1b2}{read}} ()
+\begin{DoxyCompactList}\small\item\em Read the record from the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_ae21dc570affa8cf1924f45e4af7d8e8c}{insert}} ()
+\begin{DoxyCompactList}\small\item\em Insert a new record into the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a1ec589760e8ab9c86fcb1ad145a387e3}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update a record in the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a81c1f305958ad69b318ac7013fbe53f5}{delete}} ()
+\begin{DoxyCompactList}\small\item\em Delete a record from the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a161eb65b75e9229f9281a228ce6bf573}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the column list and dirty flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_aa6f57cedd72726542f82a07b18de705c}{\$\+\_\+conn}}
+\begin{DoxyCompactList}\small\item\em Database connection object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a31347cb6a5be619d761fe87bbf8b9112}{\$\+\_\+table\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of target table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a015d898e5dc92746a40e9be71fc52d2e}{\$\+\_\+primary\+Keys}}
+\begin{DoxyCompactList}\small\item\em Array of primary key columns. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_ab55fb733cb9f6ca18a5390a134d13173}{\$\+\_\+column\+List}}
+\begin{DoxyCompactList}\small\item\em Array of columns and values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a799653f6235d132235e88e668b01f735}{\$\+\_\+dirty\+Flags}}
+\begin{DoxyCompactList}\small\item\em Array of dirty column flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_a6e8f5ef9746084caaccd859fa923091b}{\$\+\_\+read\+Only\+Flags}}
+\begin{DoxyCompactList}\small\item\em Array of read-\/only column flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Record_abb2fb41621f864220de531294627b3e2}{\$\+\_\+no\+Quote\+Flags}}
+\begin{DoxyCompactList}\small\item\em Array of no-\/quote flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MySQL_2Record_8php_source_l00007}{7}} of file \mbox{\hyperlink{MySQL_2Record_8php_source}{Record.\+php}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1MySQL_1_1Record_aa692432d6927e004bfe19047fe82fd5e}\label{classDigTech_1_1Database_1_1MySQL_1_1Record_aa692432d6927e004bfe19047fe82fd5e}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Record\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MySQL_2Record_8php_source_l00009}{9}} of file \mbox{\hyperlink{MySQL_2Record_8php_source}{Record.\+php}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a54bc8648dd58bd01a66c563969b534eb}\label{classDigTech_1_1Database_1_1Record_a54bc8648dd58bd01a66c563969b534eb}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!buildKeyString@{buildKeyString}}
+\index{buildKeyString@{buildKeyString}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{buildKeyString()}{buildKeyString()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::build\+Key\+String (\begin{DoxyParamCaption}\item[{}]{\$keys = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Build string for SQL WHERE to retrieve by primary key or keys parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$keys} & Array of column/value pairs to use for query (\$keys\mbox{[}column\+Name\mbox{]} = value) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00111}{111}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+References \mbox{\hyperlink{Record_8php_source_l00015}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}\$\+\_\+primary\+Keys}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00534}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}delete()}}, \mbox{\hyperlink{Record_8php_source_l00295}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}read()}}, and \mbox{\hyperlink{Record_8php_source_l00455}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a2422dece7a24d8554c3c2ea7adddeb69}\label{classDigTech_1_1Database_1_1Record_a2422dece7a24d8554c3c2ea7adddeb69}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!clearDirty@{clearDirty}}
+\index{clearDirty@{clearDirty}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{clearDirty()}{clearDirty()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::clear\+Dirty (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Clear column dirty flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column to clear the dirty flag for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00156}{156}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00186}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}reset\+Dirty()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a519987612778edd95dad207401ddfe1e}\label{classDigTech_1_1Database_1_1Record_a519987612778edd95dad207401ddfe1e}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!clearNoQuote@{clearNoQuote}}
+\index{clearNoQuote@{clearNoQuote}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{clearNoQuote()}{clearNoQuote()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::clear\+No\+Quote (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Clear the no quote flag for a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column name to clear as no quote \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00236}{236}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a6ec11b0b074ea5ea8a9e2fc3653dbc4d}\label{classDigTech_1_1Database_1_1Record_a6ec11b0b074ea5ea8a9e2fc3653dbc4d}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!clearReadOnly@{clearReadOnly}}
+\index{clearReadOnly@{clearReadOnly}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{clearReadOnly()}{clearReadOnly()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::clear\+Read\+Only (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Clear the read-\/only flag for a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column name to clear as not read-\/only \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00207}{207}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a94fc822210fa580b7f0ac83c6bb3e343}\label{classDigTech_1_1Database_1_1Record_a94fc822210fa580b7f0ac83c6bb3e343}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!copyRecord@{copyRecord}}
+\index{copyRecord@{copyRecord}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{copyRecord()}{copyRecord()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::copy\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Copy this object to another onea. 
+
+\begin{DoxyReturn}{Returns}
+New DBRecord object that is a copy of this object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00280}{280}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a81c1f305958ad69b318ac7013fbe53f5}\label{classDigTech_1_1Database_1_1Record_a81c1f305958ad69b318ac7013fbe53f5}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!delete@{delete}}
+\index{delete@{delete}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Delete a record from the database. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00534}{534}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+References \mbox{\hyperlink{Record_8php_source_l00111}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}build\+Key\+String()}}, and \mbox{\hyperlink{Logger_8php_source_l00063}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a1116d3ef12239babc2081157a834e8d0}\label{classDigTech_1_1Database_1_1Record_a1116d3ef12239babc2081157a834e8d0}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!get@{get}}
+\index{get@{get}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::get (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the value of a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of column or null 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00049}{49}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_ab744b2fb609f85a812c5abb3c1c7b95c}\label{classDigTech_1_1Database_1_1Record_ab744b2fb609f85a812c5abb3c1c7b95c}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!getDirty@{getDirty}}
+\index{getDirty@{getDirty}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{getDirty()}{getDirty()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::get\+Dirty (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Check of column is dirty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column to check \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The column is dirty \\
+\hline
+{\em false} & The column is not dirty \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+Boolean true/false if column is dirty 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00138}{138}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00360}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}, and \mbox{\hyperlink{Record_8php_source_l00455}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_ae21dc570affa8cf1924f45e4af7d8e8c}\label{classDigTech_1_1Database_1_1Record_ae21dc570affa8cf1924f45e4af7d8e8c}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!insert@{insert}}
+\index{insert@{insert}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::insert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Insert a new record into the database. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00360}{360}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+References \mbox{\hyperlink{Record_8php_source_l00138}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}get\+Dirty()}}, \mbox{\hyperlink{Record_8php_source_l00095}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+Key\+Column()}}, \mbox{\hyperlink{Record_8php_source_l00247}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+No\+Quote()}}, \mbox{\hyperlink{Record_8php_source_l00218}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+Read\+Only()}}, \mbox{\hyperlink{Record_8php_source_l00259}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+System\+Column()}}, \mbox{\hyperlink{Logger_8php_source_l00063}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}, \mbox{\hyperlink{Record_8php_source_l00295}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}read()}}, and \mbox{\hyperlink{Record_8php_source_l00038}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}reset()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a5105ecd6b9c4d972d99a581d66d2e093}\label{classDigTech_1_1Database_1_1Record_a5105ecd6b9c4d972d99a581d66d2e093}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!isDirty@{isDirty}}
+\index{isDirty@{isDirty}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{isDirty()}{isDirty()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::is\+Dirty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Check if record is dirty. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & A column in the record has been modified \\
+\hline
+{\em false} & No columns in the record have been modified \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+Boolean true/false if record has been modified 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00167}{167}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a120718eaac5f0d4cc6200549e895a42b}\label{classDigTech_1_1Database_1_1Record_a120718eaac5f0d4cc6200549e895a42b}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!isKeyColumn@{isKeyColumn}}
+\index{isKeyColumn@{isKeyColumn}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{isKeyColumn()}{isKeyColumn()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::is\+Key\+Column (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Check of column is in primary key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column to check \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The column is in the primary key \\
+\hline
+{\em false} & The column is not in the primary key \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+Boolean true/false if column is in primary key 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00095}{95}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00360}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}, \mbox{\hyperlink{Record_8php_source_l00295}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}read()}}, \mbox{\hyperlink{Record_8php_source_l00063}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}set()}}, and \mbox{\hyperlink{Record_8php_source_l00455}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a0f2476f4697e7933dda4849a0363a55e}\label{classDigTech_1_1Database_1_1Record_a0f2476f4697e7933dda4849a0363a55e}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!isNoQuote@{isNoQuote}}
+\index{isNoQuote@{isNoQuote}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{isNoQuote()}{isNoQuote()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::is\+No\+Quote (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the no quote flag for a column. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The column is no quote \\
+\hline
+{\em false} & The column is not no quote \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+The no quote state for the column 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00247}{247}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00360}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}, and \mbox{\hyperlink{Record_8php_source_l00455}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a21d2cd4a4e99969f5d4113aae21a5195}\label{classDigTech_1_1Database_1_1Record_a21d2cd4a4e99969f5d4113aae21a5195}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!isReadOnly@{isReadOnly}}
+\index{isReadOnly@{isReadOnly}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{isReadOnly()}{isReadOnly()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::is\+Read\+Only (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Get the read-\/only flag for a column. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The column is read-\/only \\
+\hline
+{\em false} & The column is not read-\/only \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+The read-\/only state for the column 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00218}{218}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00360}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}, and \mbox{\hyperlink{Record_8php_source_l00455}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_adffae4f9b57cd438ec7be6dbf89776d9}\label{classDigTech_1_1Database_1_1Record_adffae4f9b57cd438ec7be6dbf89776d9}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!isSystemColumn@{isSystemColumn}}
+\index{isSystemColumn@{isSystemColumn}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{isSystemColumn()}{isSystemColumn()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::is\+System\+Column (\begin{DoxyParamCaption}\item[{}]{\$col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Is this a system/administrative column? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$col} & Column name to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether column is a system/administrative column 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & Column is a system/adminstrative column \\
+\hline
+{\em false} & Column is not a system/adminstrative column \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00259}{259}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00360}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}, and \mbox{\hyperlink{Record_8php_source_l00455}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a8f9c62263491e9d4c6a290bfe0cbd1b2}\label{classDigTech_1_1Database_1_1Record_a8f9c62263491e9d4c6a290bfe0cbd1b2}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!read@{read}}
+\index{read@{read}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Read the record from the database. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00295}{295}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+References \mbox{\hyperlink{Record_8php_source_l00111}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}build\+Key\+String()}}, \mbox{\hyperlink{Record_8php_source_l00095}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+Key\+Column()}}, \mbox{\hyperlink{Logger_8php_source_l00063}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}, \mbox{\hyperlink{Record_8php_source_l00186}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}reset\+Dirty()}}, and \mbox{\hyperlink{Record_8php_source_l00083}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}set\+Key()}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00360}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a161eb65b75e9229f9281a228ce6bf573}\label{classDigTech_1_1Database_1_1Record_a161eb65b75e9229f9281a228ce6bf573}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!reset@{reset}}
+\index{reset@{reset}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Reset the column list and dirty flags. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00038}{38}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00026}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}\+\_\+\+\_\+construct()}}, and \mbox{\hyperlink{Record_8php_source_l00360}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_aedd13f04877ebaeb182d9ae95358f10c}\label{classDigTech_1_1Database_1_1Record_aedd13f04877ebaeb182d9ae95358f10c}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!resetDirty@{resetDirty}}
+\index{resetDirty@{resetDirty}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{resetDirty()}{resetDirty()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::reset\+Dirty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Reset dirty flags for the record. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00186}{186}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+References \mbox{\hyperlink{Record_8php_source_l00156}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}clear\+Dirty()}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00295}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}read()}}, and \mbox{\hyperlink{Record_8php_source_l00455}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a45157910d2302a3c2a762ddbc87fdcf8}\label{classDigTech_1_1Database_1_1Record_a45157910d2302a3c2a762ddbc87fdcf8}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!set@{set}}
+\index{set@{set}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::set (\begin{DoxyParamCaption}\item[{}]{\$column\+Name,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the value of a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column to set \\
+\hline
+{\em \$value} & The value to store in the column \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00063}{63}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+References \mbox{\hyperlink{Record_8php_source_l00095}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+Key\+Column()}}, and \mbox{\hyperlink{Record_8php_source_l00083}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}set\+Key()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a02681e7cd07c458ed11c828ff6b00a36}\label{classDigTech_1_1Database_1_1Record_a02681e7cd07c458ed11c828ff6b00a36}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!setDirty@{setDirty}}
+\index{setDirty@{setDirty}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{setDirty()}{setDirty()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::set\+Dirty (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set column is dirty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column to mark as dirty \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00147}{147}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_aa48acad1b0c68c342690e29c0f517203}\label{classDigTech_1_1Database_1_1Record_aa48acad1b0c68c342690e29c0f517203}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!setKey@{setKey}}
+\index{setKey@{setKey}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{setKey()}{setKey()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::set\+Key (\begin{DoxyParamCaption}\item[{}]{\$column\+Name,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the value of a key field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the key to set \\
+\hline
+{\em \$value} & The value to store in the key \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00083}{83}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00295}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}read()}}, and \mbox{\hyperlink{Record_8php_source_l00063}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}set()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_af3a6b46c97b24afeda415f7c9b8d559f}\label{classDigTech_1_1Database_1_1Record_af3a6b46c97b24afeda415f7c9b8d559f}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!setNoQuote@{setNoQuote}}
+\index{setNoQuote@{setNoQuote}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{setNoQuote()}{setNoQuote()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::set\+No\+Quote (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the no quote flag for a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column name to set as no quote \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00227}{227}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a5e80f6e61acfec04388a67610ec28aad}\label{classDigTech_1_1Database_1_1Record_a5e80f6e61acfec04388a67610ec28aad}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!setReadOnly@{setReadOnly}}
+\index{setReadOnly@{setReadOnly}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{setReadOnly()}{setReadOnly()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::set\+Read\+Only (\begin{DoxyParamCaption}\item[{}]{\$column\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Set the read-\/only flag for a column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$column\+Name} & The name of the column name to set as read-\/only \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00198}{198}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a1ec589760e8ab9c86fcb1ad145a387e3}\label{classDigTech_1_1Database_1_1Record_a1ec589760e8ab9c86fcb1ad145a387e3}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!update@{update}}
+\index{update@{update}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Update a record in the database. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00455}{455}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+References \mbox{\hyperlink{Record_8php_source_l00111}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}build\+Key\+String()}}, \mbox{\hyperlink{Record_8php_source_l00138}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}get\+Dirty()}}, \mbox{\hyperlink{Record_8php_source_l00095}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+Key\+Column()}}, \mbox{\hyperlink{Record_8php_source_l00247}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+No\+Quote()}}, \mbox{\hyperlink{Record_8php_source_l00218}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+Read\+Only()}}, \mbox{\hyperlink{Record_8php_source_l00259}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}is\+System\+Column()}}, \mbox{\hyperlink{Logger_8php_source_l00063}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}, and \mbox{\hyperlink{Record_8php_source_l00186}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}reset\+Dirty()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_ab55fb733cb9f6ca18a5390a134d13173}\label{classDigTech_1_1Database_1_1Record_ab55fb733cb9f6ca18a5390a134d13173}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\$\_columnList@{\$\_columnList}}
+\index{\$\_columnList@{\$\_columnList}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\$\_columnList}{$\_columnList}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::\$\+\_\+column\+List\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Array of columns and values. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00016}{16}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_aa6f57cedd72726542f82a07b18de705c}\label{classDigTech_1_1Database_1_1Record_aa6f57cedd72726542f82a07b18de705c}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\$\_conn@{\$\_conn}}
+\index{\$\_conn@{\$\_conn}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\$\_conn}{$\_conn}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::\$\+\_\+conn\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Database connection object. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00013}{13}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a799653f6235d132235e88e668b01f735}\label{classDigTech_1_1Database_1_1Record_a799653f6235d132235e88e668b01f735}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\$\_dirtyFlags@{\$\_dirtyFlags}}
+\index{\$\_dirtyFlags@{\$\_dirtyFlags}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\$\_dirtyFlags}{$\_dirtyFlags}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::\$\+\_\+dirty\+Flags\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Array of dirty column flags. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00017}{17}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_abb2fb41621f864220de531294627b3e2}\label{classDigTech_1_1Database_1_1Record_abb2fb41621f864220de531294627b3e2}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\$\_noQuoteFlags@{\$\_noQuoteFlags}}
+\index{\$\_noQuoteFlags@{\$\_noQuoteFlags}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\$\_noQuoteFlags}{$\_noQuoteFlags}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::\$\+\_\+no\+Quote\+Flags\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Array of no-\/quote flags. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00019}{19}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a015d898e5dc92746a40e9be71fc52d2e}\label{classDigTech_1_1Database_1_1Record_a015d898e5dc92746a40e9be71fc52d2e}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\$\_primaryKeys@{\$\_primaryKeys}}
+\index{\$\_primaryKeys@{\$\_primaryKeys}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\$\_primaryKeys}{$\_primaryKeys}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::\$\+\_\+primary\+Keys\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Array of primary key columns. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00015}{15}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Record_8php_source_l00111}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}build\+Key\+String()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a6e8f5ef9746084caaccd859fa923091b}\label{classDigTech_1_1Database_1_1Record_a6e8f5ef9746084caaccd859fa923091b}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\$\_readOnlyFlags@{\$\_readOnlyFlags}}
+\index{\$\_readOnlyFlags@{\$\_readOnlyFlags}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\$\_readOnlyFlags}{$\_readOnlyFlags}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::\$\+\_\+read\+Only\+Flags\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Array of read-\/only column flags. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00018}{18}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Record_a31347cb6a5be619d761fe87bbf8b9112}\label{classDigTech_1_1Database_1_1Record_a31347cb6a5be619d761fe87bbf8b9112}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}!\$\_tableName@{\$\_tableName}}
+\index{\$\_tableName@{\$\_tableName}!DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record@{DigTech\textbackslash{}Database\textbackslash{}MySQL\textbackslash{}Record}}
+\doxysubsubsection{\texorpdfstring{\$\_tableName}{$\_tableName}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\+::\$\+\_\+table\+Name\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Name of target table. 
+
+
+
+Definition at line \mbox{\hyperlink{Record_8php_source_l00014}{14}} of file \mbox{\hyperlink{Record_8php_source}{Record.\+php}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dig\+Tech/\+Database/\+My\+SQL/\mbox{\hyperlink{MySQL_2Record_8php}{Record.\+php}}\end{DoxyCompactItemize}

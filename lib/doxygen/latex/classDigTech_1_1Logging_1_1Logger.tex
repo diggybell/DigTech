@@ -1,0 +1,401 @@
+\hypertarget{classDigTech_1_1Logging_1_1Logger}{}\doxysection{Dig\+Tech\textbackslash{}Logging\textbackslash{}Logger Class Reference}
+\label{classDigTech_1_1Logging_1_1Logger}\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+
+
+This class provides logging support for errors, warnings, and debug information.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_ae56fbb37d18b46fb56868c27d3463903}{\+\_\+\+\_\+construct}} ()
+\begin{DoxyCompactList}\small\item\em Object constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a33d7731c79a482fa5452e1b80899f7dc}{configure}} (\$config)
+\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_aafd2f877e97724c83c20caa98e575962}{set\+Enabled}} (\$enabled=true)
+\begin{DoxyCompactList}\small\item\em Enable/disable all logging. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a7af4d09e51dd48abc334540141357a0b}{set\+Debug\+Enabled}} (\$enabled=true)
+\begin{DoxyCompactList}\small\item\em Enable/disable debug logging. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a74ff2bed8e95adf9821632409062e873}{set\+Warning\+Enabled}} (\$enabled=true)
+\begin{DoxyCompactList}\small\item\em Enable/disable warning logging. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_aed8d25da6751c409fb796a7b038abb87}{set\+Error\+Enabled}} (\$enabled=true)
+\begin{DoxyCompactList}\small\item\em Enable/disable error logging. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a21e4dcc3d4dc06a7ea9686949879b02d}{log}} (\$format)
+\begin{DoxyCompactList}\small\item\em Output a message to the log. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_aa42dab2ecada05621a798eeccd0c1cb2}{debug}} (\$format)
+\begin{DoxyCompactList}\small\item\em Output a debug message to the log with additiona diagnostic information. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a6926a252070b32ff996fe7f846de0288}{warning}} (\$format)
+\begin{DoxyCompactList}\small\item\em Output a warning message to the log. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a14d950c674e5f399eb9c51299633492e}{error}} (\$format)
+\begin{DoxyCompactList}\small\item\em Output an error message to the log with source/line information. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a74d0f321ca251a36c404666e8920d1aa}{set\+Log\+File}} (\$file\+Name=null)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a3f2b6e8a06dd6c777dd25b6ee8be9c9e}{output}} (\$message)
+\begin{DoxyCompactList}\small\item\em Common output handler for all log messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_ae0f81884395d07ebffe4632824a691c2}{\$\+\_\+enabled}} = true
+\begin{DoxyCompactList}\small\item\em Flag to indicate if all logging is enabled. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a5d54d780be00104a91edde17bb62e539}{\$\+\_\+debug\+Enabled}} = true
+\begin{DoxyCompactList}\small\item\em Flag to indicate if debug logging is enabled. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_ab4de025433a3f5b2cf55aa4b1fc51e13}{\$\+\_\+warning\+Enabled}} = true
+\begin{DoxyCompactList}\small\item\em Flag to indicate if warning logging is enabled. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_acc07da5b631d54a3945b5d34a9f69655}{\$\+\_\+error\+Enabled}} = true
+\begin{DoxyCompactList}\small\item\em Flag to indicate if error logging is enabled. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_ad94a815d4962a3b8f1f727c70800f4b3}{\$\+\_\+file\+Name}} = null
+\begin{DoxyCompactList}\small\item\em File name if logging is sent to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class provides logging support for errors, warnings, and debug information. 
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00010}{10}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_ae56fbb37d18b46fb56868c27d3463903}\label{classDigTech_1_1Logging_1_1Logger_ae56fbb37d18b46fb56868c27d3463903}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Object constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00021}{21}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a33d7731c79a482fa5452e1b80899f7dc}\label{classDigTech_1_1Logging_1_1Logger_a33d7731c79a482fa5452e1b80899f7dc}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!configure@{configure}}
+\index{configure@{configure}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::configure (\begin{DoxyParamCaption}\item[{}]{\$config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00025}{25}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00047}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}set\+Debug\+Enabled()}}, \mbox{\hyperlink{Logger_8php_source_l00038}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}set\+Enabled()}}, \mbox{\hyperlink{Logger_8php_source_l00065}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}set\+Error\+Enabled()}}, \mbox{\hyperlink{Logger_8php_source_l00200}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}set\+Log\+File()}}, and \mbox{\hyperlink{Logger_8php_source_l00056}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}set\+Warning\+Enabled()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_aa42dab2ecada05621a798eeccd0c1cb2}\label{classDigTech_1_1Logging_1_1Logger_aa42dab2ecada05621a798eeccd0c1cb2}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!debug@{debug}}
+\index{debug@{debug}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::debug (\begin{DoxyParamCaption}\item[{}]{\$format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Output a debug message to the log with additiona diagnostic information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$format} & A printf-\/stype format string followed by parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00095}{95}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00175}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}output()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a14d950c674e5f399eb9c51299633492e}\label{classDigTech_1_1Logging_1_1Logger_a14d950c674e5f399eb9c51299633492e}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!error@{error}}
+\index{error@{error}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::error (\begin{DoxyParamCaption}\item[{}]{\$format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Output an error message to the log with source/line information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$format} & A printf-\/stype format string followed by parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00149}{149}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00175}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}output()}}.
+
+
+
+Referenced by \mbox{\hyperlink{MySQL_2Connection_8php_source_l00022}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection\textbackslash{}connect()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a21e4dcc3d4dc06a7ea9686949879b02d}\label{classDigTech_1_1Logging_1_1Logger_a21e4dcc3d4dc06a7ea9686949879b02d}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!log@{log}}
+\index{log@{log}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::log (\begin{DoxyParamCaption}\item[{}]{\$format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Output a message to the log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$format} & A printf-\/stype format string followed by parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00074}{74}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00175}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}output()}}.
+
+
+
+Referenced by \mbox{\hyperlink{Resource_8php_source_l00031}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}\+\_\+\+\_\+construct()}}, \mbox{\hyperlink{APIInterface_8php_source_l00021}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+APIInterface\textbackslash{}autoload\+Resource()}}, \mbox{\hyperlink{MySQL_2Connection_8php_source_l00022}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection\textbackslash{}connect()}}, \mbox{\hyperlink{Record_8php_source_l00535}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}delete()}}, \mbox{\hyperlink{MySQL_2Connection_8php_source_l00066}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection\textbackslash{}disconnect()}}, \mbox{\hyperlink{SecureResource_8php_source_l00059}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\textbackslash{}dispatch()}}, \mbox{\hyperlink{Record_8php_source_l00361}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}insert()}}, \mbox{\hyperlink{APIInterface_8php_source_l00036}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+APIInterface\textbackslash{}php\+Error\+Handler()}}, \mbox{\hyperlink{MySQL_2Connection_8php_source_l00080}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection\textbackslash{}query()}}, \mbox{\hyperlink{Record_8php_source_l00296}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}read()}}, \mbox{\hyperlink{Resource_8php_source_l00169}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}response()}}, \mbox{\hyperlink{APIInterface_8php_source_l00046}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+APIInterface\textbackslash{}service\+Request()}}, and \mbox{\hyperlink{Record_8php_source_l00456}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record\textbackslash{}update()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a3f2b6e8a06dd6c777dd25b6ee8be9c9e}\label{classDigTech_1_1Logging_1_1Logger_a3f2b6e8a06dd6c777dd25b6ee8be9c9e}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!output@{output}}
+\index{output@{output}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::output (\begin{DoxyParamCaption}\item[{}]{\$message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Common output handler for all log messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$message} & The message to be output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00175}{175}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Logger_8php_source_l00095}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}debug()}}, \mbox{\hyperlink{Logger_8php_source_l00149}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}error()}}, \mbox{\hyperlink{Logger_8php_source_l00074}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}, and \mbox{\hyperlink{Logger_8php_source_l00128}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}warning()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a7af4d09e51dd48abc334540141357a0b}\label{classDigTech_1_1Logging_1_1Logger_a7af4d09e51dd48abc334540141357a0b}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!setDebugEnabled@{setDebugEnabled}}
+\index{setDebugEnabled@{setDebugEnabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{setDebugEnabled()}{setDebugEnabled()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::set\+Debug\+Enabled (\begin{DoxyParamCaption}\item[{}]{\$enabled = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable/disable debug logging. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$enabled} & Set to true to enable logging, false to disable logging \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00047}{47}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Logger_8php_source_l00025}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}configure()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_aafd2f877e97724c83c20caa98e575962}\label{classDigTech_1_1Logging_1_1Logger_aafd2f877e97724c83c20caa98e575962}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{setEnabled()}{setEnabled()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::set\+Enabled (\begin{DoxyParamCaption}\item[{}]{\$enabled = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable/disable all logging. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$enabled} & Set to true to enable logging, false to disable logging \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00038}{38}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Logger_8php_source_l00025}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}configure()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_aed8d25da6751c409fb796a7b038abb87}\label{classDigTech_1_1Logging_1_1Logger_aed8d25da6751c409fb796a7b038abb87}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!setErrorEnabled@{setErrorEnabled}}
+\index{setErrorEnabled@{setErrorEnabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{setErrorEnabled()}{setErrorEnabled()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::set\+Error\+Enabled (\begin{DoxyParamCaption}\item[{}]{\$enabled = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable/disable error logging. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$enabled} & Set to true to enable logging, false to disable logging \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00065}{65}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Logger_8php_source_l00025}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}configure()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a74d0f321ca251a36c404666e8920d1aa}\label{classDigTech_1_1Logging_1_1Logger_a74d0f321ca251a36c404666e8920d1aa}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!setLogFile@{setLogFile}}
+\index{setLogFile@{setLogFile}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{setLogFile()}{setLogFile()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::set\+Log\+File (\begin{DoxyParamCaption}\item[{}]{\$file\+Name = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00200}{200}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Logger_8php_source_l00025}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}configure()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a74ff2bed8e95adf9821632409062e873}\label{classDigTech_1_1Logging_1_1Logger_a74ff2bed8e95adf9821632409062e873}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!setWarningEnabled@{setWarningEnabled}}
+\index{setWarningEnabled@{setWarningEnabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{setWarningEnabled()}{setWarningEnabled()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::set\+Warning\+Enabled (\begin{DoxyParamCaption}\item[{}]{\$enabled = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable/disable warning logging. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$enabled} & Set to true to enable logging, false to disable logging \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00056}{56}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Logger_8php_source_l00025}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}configure()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a6926a252070b32ff996fe7f846de0288}\label{classDigTech_1_1Logging_1_1Logger_a6926a252070b32ff996fe7f846de0288}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!warning@{warning}}
+\index{warning@{warning}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::warning (\begin{DoxyParamCaption}\item[{}]{\$format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Output a warning message to the log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$format} & A printf-\/stype format string followed by parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00128}{128}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00175}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}output()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_a5d54d780be00104a91edde17bb62e539}\label{classDigTech_1_1Logging_1_1Logger_a5d54d780be00104a91edde17bb62e539}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!\$\_debugEnabled@{\$\_debugEnabled}}
+\index{\$\_debugEnabled@{\$\_debugEnabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{\$\_debugEnabled}{$\_debugEnabled}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::\$\+\_\+debug\+Enabled = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Flag to indicate if debug logging is enabled. 
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00013}{13}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_ae0f81884395d07ebffe4632824a691c2}\label{classDigTech_1_1Logging_1_1Logger_ae0f81884395d07ebffe4632824a691c2}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!\$\_enabled@{\$\_enabled}}
+\index{\$\_enabled@{\$\_enabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{\$\_enabled}{$\_enabled}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::\$\+\_\+enabled = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Flag to indicate if all logging is enabled. 
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00012}{12}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_acc07da5b631d54a3945b5d34a9f69655}\label{classDigTech_1_1Logging_1_1Logger_acc07da5b631d54a3945b5d34a9f69655}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!\$\_errorEnabled@{\$\_errorEnabled}}
+\index{\$\_errorEnabled@{\$\_errorEnabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{\$\_errorEnabled}{$\_errorEnabled}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::\$\+\_\+error\+Enabled = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Flag to indicate if error logging is enabled. 
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00015}{15}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_ad94a815d4962a3b8f1f727c70800f4b3}\label{classDigTech_1_1Logging_1_1Logger_ad94a815d4962a3b8f1f727c70800f4b3}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!\$\_fileName@{\$\_fileName}}
+\index{\$\_fileName@{\$\_fileName}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{\$\_fileName}{$\_fileName}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::\$\+\_\+file\+Name = null\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+File name if logging is sent to file. 
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00016}{16}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Logging_1_1Logger_ab4de025433a3f5b2cf55aa4b1fc51e13}\label{classDigTech_1_1Logging_1_1Logger_ab4de025433a3f5b2cf55aa4b1fc51e13}} 
+\index{DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}!\$\_warningEnabled@{\$\_warningEnabled}}
+\index{\$\_warningEnabled@{\$\_warningEnabled}!DigTech\textbackslash{}Logging\textbackslash{}Logger@{DigTech\textbackslash{}Logging\textbackslash{}Logger}}
+\doxysubsubsection{\texorpdfstring{\$\_warningEnabled}{$\_warningEnabled}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\+::\$\+\_\+warning\+Enabled = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Flag to indicate if warning logging is enabled. 
+
+
+
+Definition at line \mbox{\hyperlink{Logger_8php_source_l00014}{14}} of file \mbox{\hyperlink{Logger_8php_source}{Logger.\+php}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dig\+Tech/\+Logging/\mbox{\hyperlink{Logger_8php}{Logger.\+php}}\end{DoxyCompactItemize}

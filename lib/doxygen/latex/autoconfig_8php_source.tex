@@ -1,0 +1,29 @@
+\hypertarget{autoconfig_8php_source}{}\doxysection{autoconfig.\+php}
+\mbox{\hyperlink{autoconfig_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00003}00003\ use\ \mbox{\hyperlink{classDigTech_1_1Core_1_1Configuration}{DigTech\(\backslash\)Core\(\backslash\)Configuration}}\ as\ Configuration;}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00005}\mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{00005}}\ global\ \mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}};\ \ \textcolor{comment}{///<\ The\ global\ configuration\ object}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00007}00007\ \mbox{\hyperlink{autoconfig_8php_ae7f525cab2d22820021f4526d8762871}{getGlobalConfiguration}}();}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00008}00008\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00009}00009\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00010}00010\ \textcolor{comment}{\ *\ \(\backslash\)brief\ Create\ the\ configuration\ object\ and\ load\ ini\ file.\ Save\ to\ global\ variable.}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00011}00011\ \textcolor{comment}{\ *\ \(\backslash\)returns\ Global\ configuration\ object}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00012}00012\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00013}\mbox{\hyperlink{autoconfig_8php_ae7f525cab2d22820021f4526d8762871}{00013}}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{autoconfig_8php_ae7f525cab2d22820021f4526d8762871}{getGlobalConfiguration}}()}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00015}00015\ \ \ \ global\ \mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}};}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00017}00017\ \ \ \ \textcolor{keywordflow}{if}(!isset(\mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}}))}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00018}00018\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00019}00019\ \ \ \ \ \ \ \mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}}\ =\ \textcolor{keyword}{new}\ Configuration();}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00020}00020\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00021}00021\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}};}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{autoconfig_8php_source_l00024}00024\ ?>}
+
+\end{DoxyCode}

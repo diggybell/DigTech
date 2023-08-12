@@ -1,0 +1,24 @@
+/**
+\mainpage DigTech PHP Tools
+\section sec_intro Introduction
+The DigTech libraries provide the core functionality required to create powerful applications. These libraries include a number
+of functional classes that provide robust and well-tested functionality.
+\section sec_prerequisites Prerequisites
+\subsection soft_prereq Required Software
+\li GNU/Linux
+\li PHP 7.x or later
+\li MySQL 5.0 or later
+\subsection skills_prereq Required Skills
+\li Object-oriented PHP
+\li SQL
+\section sec_legal Legal Information
+\author Diggy Bell
+\version 0.99
+\date 2023-08-08
+
+\defgroup Core DigTech Core Library Documetation
+\defgroup Logging DigTech Logging Mechanisms
+\defgroup Database DigTech Database Library Documentation
+\defgroup API DigTech API Documentation
+
+*/

@@ -1,0 +1,24 @@
+\hypertarget{group__Database}{}\doxysection{Dig\+Tech Database Library Documentation}
+\label{group__Database}\index{DigTech Database Library Documentation@{DigTech Database Library Documentation}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDigTech_1_1Database_1_1Connection}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection}}
+\begin{DoxyCompactList}\small\item\em Base class for all database connections. Abstract functions connection to database specific connectors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}
+\begin{DoxyCompactList}\small\item\em Provides the My\+SQL database connection and API. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDigTech_1_1Database_1_1PostgreSQL_1_1Connection}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Postgre\+SQL\textbackslash{}\+Connection}}
+\begin{DoxyCompactList}\small\item\em Provides the Postgre\+SQL database connection and API. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDigTech_1_1Database_1_1Record}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Record}}
+\begin{DoxyCompactList}\small\item\em This class provides the core functionality of a database record object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{database_docs}{}\doxysubsubsection{Dig\+Tech Database Connection}\label{database_docs}
+\hypertarget{group__Database_dbdocs_intro}{}\doxysubsection{Introduction}\label{group__Database_dbdocs_intro}
+The Dig\+Tech database connection classes provide an easy to use interface to a relational database. \hypertarget{group__Database_dbdocs_support}{}\doxysubsection{Supported Databases}\label{group__Database_dbdocs_support}
+The following relational database engines are supported \begin{DoxyItemize}
+\item My\+SQL \item Maria\+DB \item Postgre\+SQL (future) \end{DoxyItemize}
+\hypertarget{group__Database_dbdocs_classes}{}\doxysubsection{Application Classes}\label{group__Database_dbdocs_classes}
+\hypertarget{group__Database_dbdocs_classes_connection}{}\doxysubsubsection{Connection}\label{group__Database_dbdocs_classes_connection}
+The Connection object provides the method to connect to the database and execute SQL statements. This class has some functionality that is in the base class (Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection), but there are also derived classes that provide the interface required for a particular database engine such as My\+SQL (Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection) or Postgre\+SQL (Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Postgre\+SQL\textbackslash{}\+Connection). \hypertarget{group__Database_dbdocs_classes_record}{}\doxysubsubsection{Record}\label{group__Database_dbdocs_classes_record}

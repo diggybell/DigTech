@@ -1,0 +1,7 @@
+/**
+\page configuration_docs DigTech Configuration Class
+\ingroup Core
+\section cfgdocs_intro Introduction
+The DigTech Configuration class provides an easy to use system configuration files.
+
+*/

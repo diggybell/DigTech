@@ -1,0 +1,6 @@
+/**
+\page logging_docs DigTech Logging Classes
+\ingroup Logging
+\section logdocs_intro Introduction
+The DigTech logging classes provides an easy to use/manage logging capability.
+*/

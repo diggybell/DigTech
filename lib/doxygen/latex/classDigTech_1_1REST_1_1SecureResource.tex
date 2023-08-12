@@ -1,0 +1,511 @@
+\hypertarget{classDigTech_1_1REST_1_1SecureResource}{}\doxysection{Dig\+Tech\textbackslash{}REST\textbackslash{}Secure\+Resource Class Reference}
+\label{classDigTech_1_1REST_1_1SecureResource}\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+
+
+This class adds authentication/access control functionality.  
+
+
+
+
+Inheritance diagram for Dig\+Tech\textbackslash{}REST\textbackslash{}Secure\+Resource\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classDigTech_1_1REST_1_1SecureResource__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dig\+Tech\textbackslash{}REST\textbackslash{}Secure\+Resource\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classDigTech_1_1REST_1_1SecureResource__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1SecureResource_ab853907269c1a9a38d566a6a4623ba3e}{\+\_\+\+\_\+construct}} (\$request, \$schema=\textquotesingle{}digtech\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Construct the object, allow for CORS, assemble and pre-\/process the data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1SecureResource_a5ae8d2162ed11ae9b87091d7487bf13e}{dispatch}} ()
+\begin{DoxyCompactList}\small\item\em Dispatch the request if it is authorized. Otherwise return HTTP 401. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1SecureResource_a71430566a32cf3a3fe817a5080da71ee}{is\+Authorized}} ()
+\begin{DoxyCompactList}\small\item\em Check request credentials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}{add\+Variable}} (\$varname, \$vartype)
+\begin{DoxyCompactList}\small\item\em Add an input variable with type information (s -\/ string, n -\/ integer, f -\/ float, d = date, t = time, dt = datetime, b = boolean) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}{response}} (\$data, \$status=200)
+\begin{DoxyCompactList}\small\item\em Format the HTTP status header and json-\/encode response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a3d91e091d825ba0f3dbf3ebf92dcb6cc}{request\+Status}} (\$code)
+\begin{DoxyCompactList}\small\item\em Get the HTTP status string for a status code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a31df9462d4ccf8a08dd1271e4f911851}{get\+Request\+Variable}} (\$var\+Name, \$default, \&\$is\+Set=null)
+\begin{DoxyCompactList}\small\item\em Get request form data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a4b8f5cb35e30be9b5691330c3a8dc604}{set\+Query\+Variables}} (\$query\+Vars)
+\begin{DoxyCompactList}\small\item\em Set query variables from URL query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a204208a60d23413516284237734e4fa4}{get\+Query\+Variable}} (\$var\+Name)
+\begin{DoxyCompactList}\small\item\em Retrieve query variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1SecureResource_a3a2c10c77a194b32747d18528b046cfc}{\$\+\_\+authorization\+Header}}
+\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1SecureResource_a674180111d903b86ea0a3a971fe9223e}{\$\+\_\+auth\+User}} = null
+\begin{DoxyCompactList}\small\item\em Auth\+User object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a1ee5558906b27e31831ff3f5722c2db3}{\$\+\_\+method}} = \textquotesingle{}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em HTTP request method. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a73a75bb5a9ab2d4a6116c22deea2c46f}{\$\+\_\+resource}} = \textquotesingle{}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em the requested resource name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a30f143a986f46ac1313d72af5ce119fc}{\$\+\_\+args}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em URI components following resource name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a59b4c92e650c2d939374f6c8bde10d41}{\$\+\_\+query}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em query parameters from URI \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a3a5689f31374dc34e1631d1c192488ab}{\$\+\_\+file}} = null
+\begin{DoxyCompactList}\small\item\em input file information for HTTP PUT \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a85274776d7937b514905ffc582914f98}{\$\+\_\+request}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em sanitized input data (\$\+\_\+\+GET and \$\+\_\+\+PUT values) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a9f3292996675ca48776931e3309e0581}{\$\+\_\+types}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em data types for input parameters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_ac963825c9330f55c28418c6e55f7e4c9}{\$\+\_\+conn}} = null
+\begin{DoxyCompactList}\small\item\em database connection handle for sql string sanitization \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a379280618b1c15b5c636d75f91ef64de}{\$\+\_\+schema}} = \textquotesingle{}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em default database schema \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitize\+Data}} (\$data, \$type=null)
+\begin{DoxyCompactList}\small\item\em Sanitize input data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class adds authentication/access control functionality. 
+
+Definition at line \mbox{\hyperlink{SecureResource_8php_source_l00012}{12}} of file \mbox{\hyperlink{SecureResource_8php_source}{Secure\+Resource.\+php}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1SecureResource_ab853907269c1a9a38d566a6a4623ba3e}\label{classDigTech_1_1REST_1_1SecureResource_ab853907269c1a9a38d566a6a4623ba3e}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$request,  }\item[{}]{\$schema = {\ttfamily \textquotesingle{}digtech\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Construct the object, allow for CORS, assemble and pre-\/process the data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$request} & The request that was received \\
+\hline
+{\em \$schema} & The default schema to be used for this API \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a91f38283d585b44bba61ab87febe228f}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource}}.
+
+
+
+Definition at line \mbox{\hyperlink{SecureResource_8php_source_l00022}{22}} of file \mbox{\hyperlink{SecureResource_8php_source}{Secure\+Resource.\+php}}.
+
+
+
+References \mbox{\hyperlink{SecureResource_8php_source_l00041}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\textbackslash{}is\+Authorized()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}\label{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!addVariable@{addVariable}}
+\index{addVariable@{addVariable}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{addVariable()}{addVariable()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::add\+Variable (\begin{DoxyParamCaption}\item[{}]{\$varname,  }\item[{}]{\$vartype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Add an input variable with type information (s -\/ string, n -\/ integer, f -\/ float, d = date, t = time, dt = datetime, b = boolean) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$varname} & Variable name \\
+\hline
+{\em \$vartype} & Variable type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00135}{135}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Resource_8php_source_l00031}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}\+\_\+\+\_\+construct()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1SecureResource_a5ae8d2162ed11ae9b87091d7487bf13e}\label{classDigTech_1_1REST_1_1SecureResource_a5ae8d2162ed11ae9b87091d7487bf13e}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{dispatch()}{dispatch()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\+::dispatch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Dispatch the request if it is authorized. Otherwise return HTTP 401. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_ae2b0032c4a1c39673dd17fe214eb897f}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource}}.
+
+
+
+Definition at line \mbox{\hyperlink{SecureResource_8php_source_l00059}{59}} of file \mbox{\hyperlink{SecureResource_8php_source}{Secure\+Resource.\+php}}.
+
+
+
+References \mbox{\hyperlink{SecureResource_8php_source_l00041}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\textbackslash{}is\+Authorized()}}, \mbox{\hyperlink{Logger_8php_source_l00074}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}, and \mbox{\hyperlink{Resource_8php_source_l00169}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}response()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a204208a60d23413516284237734e4fa4}\label{classDigTech_1_1REST_1_1Resource_a204208a60d23413516284237734e4fa4}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!getQueryVariable@{getQueryVariable}}
+\index{getQueryVariable@{getQueryVariable}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{getQueryVariable()}{getQueryVariable()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::get\+Query\+Variable (\begin{DoxyParamCaption}\item[{}]{\$var\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Retrieve query variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$var\+Name} & Name of variable to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of variable (mixed) or null 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00310}{310}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a31df9462d4ccf8a08dd1271e4f911851}\label{classDigTech_1_1REST_1_1Resource_a31df9462d4ccf8a08dd1271e4f911851}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!getRequestVariable@{getRequestVariable}}
+\index{getRequestVariable@{getRequestVariable}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{getRequestVariable()}{getRequestVariable()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::get\+Request\+Variable (\begin{DoxyParamCaption}\item[{}]{\$var\+Name,  }\item[{}]{\$default,  }\item[{\&}]{\$is\+Set = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Get request form data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$var\+Name} & Name of request variable to get \\
+\hline
+{\em \$default} & Default value if request variable is empty \\
+\hline
+{\em \$is\+Set} & Indicates if variable was set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00275}{275}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1SecureResource_a71430566a32cf3a3fe817a5080da71ee}\label{classDigTech_1_1REST_1_1SecureResource_a71430566a32cf3a3fe817a5080da71ee}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!isAuthorized@{isAuthorized}}
+\index{isAuthorized@{isAuthorized}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{isAuthorized()}{isAuthorized()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\+::is\+Authorized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check request credentials. 
+
+\begin{DoxyReturn}{Returns}
+true/false to indicate if request is authorized 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]This is where the authentication logic should be placed. The auth handler can interpret the Authorization header as desired. \end{DoxyRefDesc}
+
+
+\texorpdfstring{$<$}{<} \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000005}{Todo}}]This needs to be fixed \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{SecureResource_8php_source_l00041}{41}} of file \mbox{\hyperlink{SecureResource_8php_source}{Secure\+Resource.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{SecureResource_8php_source_l00022}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\textbackslash{}\+\_\+\+\_\+construct()}}, and \mbox{\hyperlink{SecureResource_8php_source_l00059}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\textbackslash{}dispatch()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a3d91e091d825ba0f3dbf3ebf92dcb6cc}\label{classDigTech_1_1REST_1_1Resource_a3d91e091d825ba0f3dbf3ebf92dcb6cc}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!requestStatus@{requestStatus}}
+\index{requestStatus@{requestStatus}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{requestStatus()}{requestStatus()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::request\+Status (\begin{DoxyParamCaption}\item[{}]{\$code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Get the HTTP status string for a status code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$code} & The HTTP status code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Text associated with HTTP status code 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00256}{256}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Resource_8php_source_l00169}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}response()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}\label{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!response@{response}}
+\index{response@{response}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{response()}{response()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::response (\begin{DoxyParamCaption}\item[{}]{\$data,  }\item[{}]{\$status = {\ttfamily 200} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Format the HTTP status header and json-\/encode response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$data} & Response data to encode and return \\
+\hline
+{\em \$status} & The HTTP status code for the response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+json-\/encoded response data 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00169}{169}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00074}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}, and \mbox{\hyperlink{Resource_8php_source_l00256}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}request\+Status()}}.
+
+
+
+Referenced by \mbox{\hyperlink{Resource_8php_source_l00031}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}\+\_\+\+\_\+construct()}}, \mbox{\hyperlink{Resource_8php_source_l00144}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}dispatch()}}, and \mbox{\hyperlink{SecureResource_8php_source_l00059}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\textbackslash{}dispatch()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}\label{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!sanitizeData@{sanitizeData}}
+\index{sanitizeData@{sanitizeData}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{sanitizeData()}{sanitizeData()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::sanitize\+Data (\begin{DoxyParamCaption}\item[{}]{\$data,  }\item[{}]{\$type = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Sanitize input data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$data} & Input data to be sanitized \\
+\hline
+{\em \$type} & Data type for input data if not array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sanitized input data 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00198}{198}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+
+
+References \mbox{\hyperlink{Resource_8php_source_l00198}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}sanitize\+Data()}}.
+
+
+
+Referenced by \mbox{\hyperlink{Resource_8php_source_l00031}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}\+\_\+\+\_\+construct()}}, and \mbox{\hyperlink{Resource_8php_source_l00198}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}sanitize\+Data()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a4b8f5cb35e30be9b5691330c3a8dc604}\label{classDigTech_1_1REST_1_1Resource_a4b8f5cb35e30be9b5691330c3a8dc604}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!setQueryVariables@{setQueryVariables}}
+\index{setQueryVariables@{setQueryVariables}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{setQueryVariables()}{setQueryVariables()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::set\+Query\+Variables (\begin{DoxyParamCaption}\item[{}]{\$query\+Vars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Set query variables from URL query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$query\+Vars} & The list of variables to received on request \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00300}{300}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a30f143a986f46ac1313d72af5ce119fc}\label{classDigTech_1_1REST_1_1Resource_a30f143a986f46ac1313d72af5ce119fc}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_args@{\$\_args}}
+\index{\$\_args@{\$\_args}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_args}{$\_args}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+args = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+URI components following resource name. 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00018}{18}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Resource_8php_source_l00144}{Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\textbackslash{}dispatch()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1SecureResource_a3a2c10c77a194b32747d18528b046cfc}\label{classDigTech_1_1REST_1_1SecureResource_a3a2c10c77a194b32747d18528b046cfc}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_authorizationHeader@{\$\_authorizationHeader}}
+\index{\$\_authorizationHeader@{\$\_authorizationHeader}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_authorizationHeader}{$\_authorizationHeader}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\+::\$\+\_\+authorization\+Header\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{SecureResource_8php_source_l00014}{14}} of file \mbox{\hyperlink{SecureResource_8php_source}{Secure\+Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1SecureResource_a674180111d903b86ea0a3a971fe9223e}\label{classDigTech_1_1REST_1_1SecureResource_a674180111d903b86ea0a3a971fe9223e}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_authUser@{\$\_authUser}}
+\index{\$\_authUser@{\$\_authUser}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_authUser}{$\_authUser}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Secure\+Resource\+::\$\+\_\+auth\+User = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Auth\+User object. 
+
+
+
+Definition at line \mbox{\hyperlink{SecureResource_8php_source_l00015}{15}} of file \mbox{\hyperlink{SecureResource_8php_source}{Secure\+Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_ac963825c9330f55c28418c6e55f7e4c9}\label{classDigTech_1_1REST_1_1Resource_ac963825c9330f55c28418c6e55f7e4c9}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_conn@{\$\_conn}}
+\index{\$\_conn@{\$\_conn}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_conn}{$\_conn}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+conn = null\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+database connection handle for sql string sanitization 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00023}{23}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a3a5689f31374dc34e1631d1c192488ab}\label{classDigTech_1_1REST_1_1Resource_a3a5689f31374dc34e1631d1c192488ab}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_file@{\$\_file}}
+\index{\$\_file@{\$\_file}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_file}{$\_file}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+file = null\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+input file information for HTTP PUT 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00020}{20}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a1ee5558906b27e31831ff3f5722c2db3}\label{classDigTech_1_1REST_1_1Resource_a1ee5558906b27e31831ff3f5722c2db3}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_method@{\$\_method}}
+\index{\$\_method@{\$\_method}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_method}{$\_method}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+method = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+HTTP request method. 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00016}{16}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a59b4c92e650c2d939374f6c8bde10d41}\label{classDigTech_1_1REST_1_1Resource_a59b4c92e650c2d939374f6c8bde10d41}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_query@{\$\_query}}
+\index{\$\_query@{\$\_query}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_query}{$\_query}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+query = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+query parameters from URI 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00019}{19}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a85274776d7937b514905ffc582914f98}\label{classDigTech_1_1REST_1_1Resource_a85274776d7937b514905ffc582914f98}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_request@{\$\_request}}
+\index{\$\_request@{\$\_request}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_request}{$\_request}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+request = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+sanitized input data (\$\+\_\+\+GET and \$\+\_\+\+PUT values) 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00021}{21}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a73a75bb5a9ab2d4a6116c22deea2c46f}\label{classDigTech_1_1REST_1_1Resource_a73a75bb5a9ab2d4a6116c22deea2c46f}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_resource@{\$\_resource}}
+\index{\$\_resource@{\$\_resource}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_resource}{$\_resource}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+resource = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+the requested resource name 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00017}{17}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a379280618b1c15b5c636d75f91ef64de}\label{classDigTech_1_1REST_1_1Resource_a379280618b1c15b5c636d75f91ef64de}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_schema@{\$\_schema}}
+\index{\$\_schema@{\$\_schema}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_schema}{$\_schema}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+schema = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+default database schema 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00024}{24}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1Resource_a9f3292996675ca48776931e3309e0581}\label{classDigTech_1_1REST_1_1Resource_a9f3292996675ca48776931e3309e0581}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}!\$\_types@{\$\_types}}
+\index{\$\_types@{\$\_types}!DigTech\textbackslash{}REST\textbackslash{}SecureResource@{DigTech\textbackslash{}REST\textbackslash{}SecureResource}}
+\doxysubsubsection{\texorpdfstring{\$\_types}{$\_types}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+Resource\+::\$\+\_\+types = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+data types for input parameters 
+
+
+
+Definition at line \mbox{\hyperlink{Resource_8php_source_l00022}{22}} of file \mbox{\hyperlink{Resource_8php_source}{Resource.\+php}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dig\+Tech/\+REST/\mbox{\hyperlink{SecureResource_8php}{Secure\+Resource.\+php}}\end{DoxyCompactItemize}

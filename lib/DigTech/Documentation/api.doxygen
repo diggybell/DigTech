@@ -1,0 +1,37 @@
+/**
+\page api_docs DigTech API Class
+\ingroup API
+\section apidocs_intro Introduction
+The DigTech API classes provides an easy to use API capability.
+
+\section sec_httpd Apache Configuration
+THe first step for setting up a REST API service is to define the URI that will be used. This can be done
+very easily with the Apache AliasMatch directive as shown below.
+\code
+<VirtualHost digtech.diggyabi.com:*>
+   DocumentRoot "/var/www/digtech.diggyabi.com"
+   ServerName digtech.diggyabi.com
+   AliasMatch ^/api/v1/(.*)$ /var/www/digtech.diggyabi.com/restapi.php
+</VirtualHost>
+\endcode
+
+This configuration will consume the initial request URL.
+
+\code
+https://www.example.com/api/v1/catalog/automotive/ford
+\endcode
+
+This URL will be parsed into multiple elements.
+
+ * - Primary URL (https://www.example.com)
+ *   - Protocol (https://)
+ *   - Host (www.example.com)
+ * - API path (/api/v1/) - (will be discarded)
+ *   - The AliasMatch directive is in effect here
+ * - API Request (catalog/automotive/ford)
+ *   - Resource (catalog)
+ *   - Parameters (/automotive/ford)
+ *     - automotive
+ *     - ford
+
+*/

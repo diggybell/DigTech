@@ -1,0 +1,172 @@
+\hypertarget{classDigTech_1_1Core_1_1Configuration}{}\doxysection{Dig\+Tech\textbackslash{}Core\textbackslash{}Configuration Class Reference}
+\label{classDigTech_1_1Core_1_1Configuration}\index{DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}}
+
+
+This class handles reading the application configuration file. Features include dynamically locating the configuration file.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Core_1_1Configuration_a3a2715b0a846be09d91ed2deefd960b2}{\+\_\+\+\_\+construct}} (\$config\+File=null)
+\begin{DoxyCompactList}\small\item\em Object constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Core_1_1Configuration_ad34e6a720af185e94f47a7db3a16fdd5}{get\+Section}} (\$section)
+\begin{DoxyCompactList}\small\item\em Retrieve all configuration parameters from section as associative array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Core_1_1Configuration_a560ffa8e3893910911ac769f93946a24}{find\+Config\+File}} ()
+\begin{DoxyCompactList}\small\item\em Internal method to location ini file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Core_1_1Configuration_a2da256cb7515b10f17827c0ea696e17b}{\$\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em Parsed content of ini file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Core_1_1Configuration_a49ae8cb2f14477deac98da1e498004eb}{\$\+\_\+config\+File}} = \textquotesingle{}digtech.\+ini\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Default name of ini file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Core_1_1Configuration_a27bb3bcfa4ddddaa392d8956ef1e5ef7}{\$\+\_\+default\+Paths}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Default paths to search for ini file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class handles reading the application configuration file. Features include dynamically locating the configuration file. 
+
+Definition at line \mbox{\hyperlink{Configuration_8php_source_l00011}{11}} of file \mbox{\hyperlink{Configuration_8php_source}{Configuration.\+php}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Core_1_1Configuration_a3a2715b0a846be09d91ed2deefd960b2}\label{classDigTech_1_1Core_1_1Configuration_a3a2715b0a846be09d91ed2deefd960b2}} 
+\index{DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$config\+File = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Object constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$config\+File} & Name of configuration file to open \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Configuration_8php_source_l00021}{21}} of file \mbox{\hyperlink{Configuration_8php_source}{Configuration.\+php}}.
+
+
+
+References \mbox{\hyperlink{autoconfig_8php_source_l00005}{\$global\+Configuration}}, and \mbox{\hyperlink{Configuration_8php_source_l00067}{Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\textbackslash{}find\+Config\+File()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Core_1_1Configuration_a560ffa8e3893910911ac769f93946a24}\label{classDigTech_1_1Core_1_1Configuration_a560ffa8e3893910911ac769f93946a24}} 
+\index{DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}!findConfigFile@{findConfigFile}}
+\index{findConfigFile@{findConfigFile}!DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}}
+\doxysubsubsection{\texorpdfstring{findConfigFile()}{findConfigFile()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\+::find\+Config\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Internal method to location ini file. 
+
+\begin{DoxyReturn}{Returns}
+Location of ini file if found 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & Location of ini file \\
+\hline
+{\em null} & The ini file was not found \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{Configuration_8php_source_l00067}{67}} of file \mbox{\hyperlink{Configuration_8php_source}{Configuration.\+php}}.
+
+
+
+References \mbox{\hyperlink{Configuration_8php_source_l00014}{Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\textbackslash{}\$\+\_\+config\+File}}.
+
+
+
+Referenced by \mbox{\hyperlink{Configuration_8php_source_l00021}{Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\textbackslash{}\+\_\+\+\_\+construct()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Core_1_1Configuration_ad34e6a720af185e94f47a7db3a16fdd5}\label{classDigTech_1_1Core_1_1Configuration_ad34e6a720af185e94f47a7db3a16fdd5}} 
+\index{DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}!getSection@{getSection}}
+\index{getSection@{getSection}!DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}}
+\doxysubsubsection{\texorpdfstring{getSection()}{getSection()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\+::get\+Section (\begin{DoxyParamCaption}\item[{}]{\$section }\end{DoxyParamCaption})}
+
+
+
+Retrieve all configuration parameters from section as associative array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$section} & The name of the ini section to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Associative array containing configuration parameters 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Configuration_8php_source_l00049}{49}} of file \mbox{\hyperlink{Configuration_8php_source}{Configuration.\+php}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Core_1_1Configuration_a2da256cb7515b10f17827c0ea696e17b}\label{classDigTech_1_1Core_1_1Configuration_a2da256cb7515b10f17827c0ea696e17b}} 
+\index{DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}!\$\_config@{\$\_config}}
+\index{\$\_config@{\$\_config}!DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}}
+\doxysubsubsection{\texorpdfstring{\$\_config}{$\_config}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\+::\$\+\_\+config\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parsed content of ini file. 
+
+
+
+Definition at line \mbox{\hyperlink{Configuration_8php_source_l00013}{13}} of file \mbox{\hyperlink{Configuration_8php_source}{Configuration.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Core_1_1Configuration_a49ae8cb2f14477deac98da1e498004eb}\label{classDigTech_1_1Core_1_1Configuration_a49ae8cb2f14477deac98da1e498004eb}} 
+\index{DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}!\$\_configFile@{\$\_configFile}}
+\index{\$\_configFile@{\$\_configFile}!DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}}
+\doxysubsubsection{\texorpdfstring{\$\_configFile}{$\_configFile}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\+::\$\+\_\+config\+File = \textquotesingle{}digtech.\+ini\textquotesingle{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default name of ini file. 
+
+
+
+Definition at line \mbox{\hyperlink{Configuration_8php_source_l00014}{14}} of file \mbox{\hyperlink{Configuration_8php_source}{Configuration.\+php}}.
+
+
+
+Referenced by \mbox{\hyperlink{Configuration_8php_source_l00067}{Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\textbackslash{}find\+Config\+File()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Core_1_1Configuration_a27bb3bcfa4ddddaa392d8956ef1e5ef7}\label{classDigTech_1_1Core_1_1Configuration_a27bb3bcfa4ddddaa392d8956ef1e5ef7}} 
+\index{DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}!\$\_defaultPaths@{\$\_defaultPaths}}
+\index{\$\_defaultPaths@{\$\_defaultPaths}!DigTech\textbackslash{}Core\textbackslash{}Configuration@{DigTech\textbackslash{}Core\textbackslash{}Configuration}}
+\doxysubsubsection{\texorpdfstring{\$\_defaultPaths}{$\_defaultPaths}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Core\textbackslash{}\+Configuration\+::\$\+\_\+default\+Paths = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default paths to search for ini file. 
+
+
+
+Definition at line \mbox{\hyperlink{Configuration_8php_source_l00015}{15}} of file \mbox{\hyperlink{Configuration_8php_source}{Configuration.\+php}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dig\+Tech/\+Core/\mbox{\hyperlink{Configuration_8php}{Configuration.\+php}}\end{DoxyCompactItemize}

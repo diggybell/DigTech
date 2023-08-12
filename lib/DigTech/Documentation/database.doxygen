@@ -1,0 +1,17 @@
+/**
+\page database_docs DigTech Database Connection
+\ingroup Database
+\section dbdocs_intro Introduction
+The DigTech database connection classes provide an easy to use interface to a relational database.
+\section dbdocs_support Supported Databases
+The following relational database engines are supported
+\li MySQL
+\li MariaDB
+\li PostgreSQL (future)
+\section dbdocs_classes Application Classes
+\subsection dbdocs_classes_connection Connection
+The Connection object provides the method to connect to the database and execute SQL statements. This class has some functionality that is in the base class (DigTech\Database\Connection), but
+there are also derived classes that provide the interface required for a particular database engine such as MySQL (DigTech\Database\MySQL\Connection) or PostgreSQL (DigTech\Database\PostgreSQL\Connection).
+\subsection dbdocs_classes_record Record
+
+*/

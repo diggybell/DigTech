@@ -1,0 +1,85 @@
+\hypertarget{classDigTech_1_1REST_1_1APIInterface}{}\doxysection{Dig\+Tech\textbackslash{}REST\textbackslash{}APIInterface Class Reference}
+\label{classDigTech_1_1REST_1_1APIInterface}\index{DigTech\textbackslash{}REST\textbackslash{}APIInterface@{DigTech\textbackslash{}REST\textbackslash{}APIInterface}}
+
+
+This class is the primary dispatcher used to dispatch REST requests.  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDigTech_1_1REST_1_1APIInterface_a7a1143ee699c4979f7bb0b938ec15095}{service\+Request}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDigTech_1_1REST_1_1APIInterface_a0c5b220c0f741da592d18e24fef6609f}{autoload\+Resource}} (\$class\+Name)
+\begin{DoxyCompactList}\small\item\em autoload handler for loading resources \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDigTech_1_1REST_1_1APIInterface_a216d8bea2b9d99dfdf9f42b96a94025d}{php\+Error\+Handler}} (\$errno, \$errstr, \$file, \$line)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is the primary dispatcher used to dispatch REST requests. 
+
+Definition at line \mbox{\hyperlink{APIInterface_8php_source_l00015}{15}} of file \mbox{\hyperlink{APIInterface_8php_source}{APIInterface.\+php}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1APIInterface_a0c5b220c0f741da592d18e24fef6609f}\label{classDigTech_1_1REST_1_1APIInterface_a0c5b220c0f741da592d18e24fef6609f}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}APIInterface@{DigTech\textbackslash{}REST\textbackslash{}APIInterface}!autoloadResource@{autoloadResource}}
+\index{autoloadResource@{autoloadResource}!DigTech\textbackslash{}REST\textbackslash{}APIInterface@{DigTech\textbackslash{}REST\textbackslash{}APIInterface}}
+\doxysubsubsection{\texorpdfstring{autoloadResource()}{autoloadResource()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+APIInterface\+::autoload\+Resource (\begin{DoxyParamCaption}\item[{}]{\$class\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+autoload handler for loading resources 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$class\+Name} & The class name to load \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{APIInterface_8php_source_l00021}{21}} of file \mbox{\hyperlink{APIInterface_8php_source}{APIInterface.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00074}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1APIInterface_a216d8bea2b9d99dfdf9f42b96a94025d}\label{classDigTech_1_1REST_1_1APIInterface_a216d8bea2b9d99dfdf9f42b96a94025d}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}APIInterface@{DigTech\textbackslash{}REST\textbackslash{}APIInterface}!phpErrorHandler@{phpErrorHandler}}
+\index{phpErrorHandler@{phpErrorHandler}!DigTech\textbackslash{}REST\textbackslash{}APIInterface@{DigTech\textbackslash{}REST\textbackslash{}APIInterface}}
+\doxysubsubsection{\texorpdfstring{phpErrorHandler()}{phpErrorHandler()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+APIInterface\+::php\+Error\+Handler (\begin{DoxyParamCaption}\item[{}]{\$errno,  }\item[{}]{\$errstr,  }\item[{}]{\$file,  }\item[{}]{\$line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{APIInterface_8php_source_l00036}{36}} of file \mbox{\hyperlink{APIInterface_8php_source}{APIInterface.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00074}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1REST_1_1APIInterface_a7a1143ee699c4979f7bb0b938ec15095}\label{classDigTech_1_1REST_1_1APIInterface_a7a1143ee699c4979f7bb0b938ec15095}} 
+\index{DigTech\textbackslash{}REST\textbackslash{}APIInterface@{DigTech\textbackslash{}REST\textbackslash{}APIInterface}!serviceRequest@{serviceRequest}}
+\index{serviceRequest@{serviceRequest}!DigTech\textbackslash{}REST\textbackslash{}APIInterface@{DigTech\textbackslash{}REST\textbackslash{}APIInterface}}
+\doxysubsubsection{\texorpdfstring{serviceRequest()}{serviceRequest()}}
+{\footnotesize\ttfamily static Dig\+Tech\textbackslash{}\+REST\textbackslash{}\+APIInterface\+::service\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{APIInterface_8php_source_l00046}{46}} of file \mbox{\hyperlink{APIInterface_8php_source}{APIInterface.\+php}}.
+
+
+
+References \mbox{\hyperlink{Logger_8php_source_l00074}{Dig\+Tech\textbackslash{}\+Logging\textbackslash{}\+Logger\textbackslash{}log()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dig\+Tech/\+REST/\mbox{\hyperlink{APIInterface_8php}{APIInterface.\+php}}\end{DoxyCompactItemize}

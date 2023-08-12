@@ -1,0 +1,491 @@
+\hypertarget{classDigTech_1_1Database_1_1Connection}{}\doxysection{Dig\+Tech\textbackslash{}Database\textbackslash{}Connection Class Reference}
+\label{classDigTech_1_1Database_1_1Connection}\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+
+
+Base class for all database connections. Abstract functions connection to database specific connectors.  
+
+
+
+
+Inheritance diagram for Dig\+Tech\textbackslash{}Database\textbackslash{}Connection\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDigTech_1_1Database_1_1Connection__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a5bf52f18b465b9650cafbe36bf7d5bda}{\+\_\+\+\_\+construct}} ()
+\begin{DoxyCompactList}\small\item\em Object constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_aeedd3317c12186d533281fab19368678}{\+\_\+\+\_\+destruct}} ()
+\begin{DoxyCompactList}\small\item\em Object destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_abe13c4c7fbaf1d4521b4c6ce87b820e5}{host}} (\$host)
+\begin{DoxyCompactList}\small\item\em Set host name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a193e15fbd25e2d6511081fe6156d1925}{port}} (\$port)
+\begin{DoxyCompactList}\small\item\em Set port number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_aa798bc2dffcb2e06c89fed23f54c8f8e}{username}} (\$username)
+\begin{DoxyCompactList}\small\item\em Set user name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a4143f9ad656b538e3b89eeb54362fa02}{password}} (\$password)
+\begin{DoxyCompactList}\small\item\em Set password. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a0d7195942557edfc8a8560cb3dac6920}{schema}} (\$schema)
+\begin{DoxyCompactList}\small\item\em Set default schema. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a052d5a52d23fe32e539f9b31f4085cef}{configure}} (\$configuration)
+\begin{DoxyCompactList}\small\item\em Configure connection from array Array = \mbox{[} \textquotesingle{}host\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}localhost\textquotesingle{}, \textquotesingle{}port\textquotesingle{} =\texorpdfstring{$>$}{>} 3306, \textquotesingle{}username\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}\textquotesingle{}, \textquotesingle{}password\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}\textquotesingle{}, \textquotesingle{}schema\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}\textquotesingle{}, \mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a8c2f124816920c21d406fb8b70d4bcb8}{connect}} ()
+\begin{DoxyCompactList}\small\item\em Connect to database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_ab3d8b49f993243d70a9bc3c8a8937102}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect from database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a9ac3e047a5355c7e7e2b2ea035636fb0}{query}} (\$sql, \$multi=false)
+\begin{DoxyCompactList}\small\item\em Query database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a1706a732b9c8f4a6edea133044ee1e99}{fetch}} (\$res)
+\begin{DoxyCompactList}\small\item\em Fetch a row from the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a0ead7091c17c01211839091d40473920}{free\+Result}} (\$res)
+\begin{DoxyCompactList}\small\item\em Free result set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a1d4f83b386173f257b9a60361f3e31e1}{error}} ()
+\begin{DoxyCompactList}\small\item\em Get the last error information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a12373a2fa84989dccf52a7fa5d08aaaa}{num\+Rows}} (\$res)
+\begin{DoxyCompactList}\small\item\em Number of rows in result set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a3ef6813761533ea436cc256dc6e2dc46}{affected\+Rows}} (\$res)
+\begin{DoxyCompactList}\small\item\em Number of rows affected by operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a1f47c0d3207ab0020c1760ec10e94d0c}{insert\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the last inserted identity value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_ae336f4eefe8456cf425fc8537ee78d4d}{escape\+String}} (\$string)
+\begin{DoxyCompactList}\small\item\em Escape a string for SQL injection protection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_aa5d3b472dd740780c828d714491e3ca6}{\$\+\_\+host}}
+\begin{DoxyCompactList}\small\item\em Hostname of database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_aa545a9257a9cdc8cb7f62717f2b824be}{\$\+\_\+port}}
+\begin{DoxyCompactList}\small\item\em Port number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_af0135cc3d5da4a26bbe217dd00859354}{\$\+\_\+username}}
+\begin{DoxyCompactList}\small\item\em User name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_a337cfefeefad2f8af6c3c02b7d0480f1}{\$\+\_\+password}}
+\begin{DoxyCompactList}\small\item\em Password. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_ad758a5209a909eb6091544a7882d1c13}{\$\+\_\+schema}}
+\begin{DoxyCompactList}\small\item\em Default schema name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_aa05865f21cff0fabd3eb3cd3278a3c06}{\$\+\_\+conn}}
+\begin{DoxyCompactList}\small\item\em Database connection handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all database connections. Abstract functions connection to database specific connectors. 
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00010}{10}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a5bf52f18b465b9650cafbe36bf7d5bda}\label{classDigTech_1_1Database_1_1Connection_a5bf52f18b465b9650cafbe36bf7d5bda}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Object constructor. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_af1447bff03a62a3917ddcf0853828f66}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}, and \mbox{\hyperlink{classDigTech_1_1Database_1_1PostgreSQL_1_1Connection_abb68a3441b677e0b5ab8945c422884d5}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Postgre\+SQL\textbackslash{}\+Connection}}.
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00022}{22}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_aeedd3317c12186d533281fab19368678}\label{classDigTech_1_1Database_1_1Connection_aeedd3317c12186d533281fab19368678}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\_\_destruct@{\_\_destruct}}
+\index{\_\_destruct@{\_\_destruct}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\_\_destruct()}{\_\_destruct()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\+\_\+\+\_\+destruct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Object destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00035}{35}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+
+
+References \mbox{\hyperlink{classDigTech_1_1Database_1_1Connection_ab3d8b49f993243d70a9bc3c8a8937102}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\textbackslash{}disconnect()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a3ef6813761533ea436cc256dc6e2dc46}\label{classDigTech_1_1Database_1_1Connection_a3ef6813761533ea436cc256dc6e2dc46}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!affectedRows@{affectedRows}}
+\index{affectedRows@{affectedRows}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{affectedRows()}{affectedRows()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::affected\+Rows (\begin{DoxyParamCaption}\item[{}]{\$res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Number of rows affected by operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$res} & Result set to get affected rows for \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_afe5531e5011a845fc0e65b13b1bd8bfe}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a052d5a52d23fe32e539f9b31f4085cef}\label{classDigTech_1_1Database_1_1Connection_a052d5a52d23fe32e539f9b31f4085cef}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!configure@{configure}}
+\index{configure@{configure}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::configure (\begin{DoxyParamCaption}\item[{}]{\$configuration }\end{DoxyParamCaption})}
+
+
+
+Configure connection from array Array = \mbox{[} \textquotesingle{}host\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}localhost\textquotesingle{}, \textquotesingle{}port\textquotesingle{} =\texorpdfstring{$>$}{>} 3306, \textquotesingle{}username\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}\textquotesingle{}, \textquotesingle{}password\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}\textquotesingle{}, \textquotesingle{}schema\textquotesingle{} =\texorpdfstring{$>$}{>} \textquotesingle{}\textquotesingle{}, \mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00095}{95}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a8c2f124816920c21d406fb8b70d4bcb8}\label{classDigTech_1_1Database_1_1Connection_a8c2f124816920c21d406fb8b70d4bcb8}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!connect@{connect}}
+\index{connect@{connect}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Connect to database. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_a145abb9b393632fa9a6bee562fee0716}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_ab3d8b49f993243d70a9bc3c8a8937102}\label{classDigTech_1_1Database_1_1Connection_ab3d8b49f993243d70a9bc3c8a8937102}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Disconnect from database. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_aacc5ad1b456f4c9cae91788d8d51d9fc}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+
+
+Referenced by \mbox{\hyperlink{Connection_8php_source_l00035}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\textbackslash{}\+\_\+\+\_\+destruct()}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a1d4f83b386173f257b9a60361f3e31e1}\label{classDigTech_1_1Database_1_1Connection_a1d4f83b386173f257b9a60361f3e31e1}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!error@{error}}
+\index{error@{error}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Get the last error information. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_a5f36a45ec74b4c92a670cc0dfce0691a}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_ae336f4eefe8456cf425fc8537ee78d4d}\label{classDigTech_1_1Database_1_1Connection_ae336f4eefe8456cf425fc8537ee78d4d}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!escapeString@{escapeString}}
+\index{escapeString@{escapeString}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{escapeString()}{escapeString()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::escape\+String (\begin{DoxyParamCaption}\item[{}]{\$string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Escape a string for SQL injection protection. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_af57f4f284cdde321aaa7e2e2bf5e3542}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a1706a732b9c8f4a6edea133044ee1e99}\label{classDigTech_1_1Database_1_1Connection_a1706a732b9c8f4a6edea133044ee1e99}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!fetch@{fetch}}
+\index{fetch@{fetch}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{fetch()}{fetch()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::fetch (\begin{DoxyParamCaption}\item[{}]{\$res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Fetch a row from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$res} & Result set to retrieve row for \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_a992be9775deef01302ab89318f8016ee}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a0ead7091c17c01211839091d40473920}\label{classDigTech_1_1Database_1_1Connection_a0ead7091c17c01211839091d40473920}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!freeResult@{freeResult}}
+\index{freeResult@{freeResult}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{freeResult()}{freeResult()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::free\+Result (\begin{DoxyParamCaption}\item[{}]{\$res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Free result set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$res} & Result set to free \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_aff25f96bb1ed37d8931e7a7ce44a0193}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_abe13c4c7fbaf1d4521b4c6ce87b820e5}\label{classDigTech_1_1Database_1_1Connection_abe13c4c7fbaf1d4521b4c6ce87b820e5}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!host@{host}}
+\index{host@{host}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{host()}{host()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::host (\begin{DoxyParamCaption}\item[{}]{\$host }\end{DoxyParamCaption})}
+
+
+
+Set host name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$host} & Host name to connect to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00044}{44}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a1f47c0d3207ab0020c1760ec10e94d0c}\label{classDigTech_1_1Database_1_1Connection_a1f47c0d3207ab0020c1760ec10e94d0c}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!insertId@{insertId}}
+\index{insertId@{insertId}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{insertId()}{insertId()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::insert\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Get the last inserted identity value. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_a58e8fcad33d1456c206552aefe433d06}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a12373a2fa84989dccf52a7fa5d08aaaa}\label{classDigTech_1_1Database_1_1Connection_a12373a2fa84989dccf52a7fa5d08aaaa}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!numRows@{numRows}}
+\index{numRows@{numRows}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{numRows()}{numRows()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::num\+Rows (\begin{DoxyParamCaption}\item[{}]{\$res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Number of rows in result set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$res} & Result set to get number of rows for \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_a9cdc230cacb6861ce0c6d7957efd9cfb}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a4143f9ad656b538e3b89eeb54362fa02}\label{classDigTech_1_1Database_1_1Connection_a4143f9ad656b538e3b89eeb54362fa02}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!password@{password}}
+\index{password@{password}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{password()}{password()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::password (\begin{DoxyParamCaption}\item[{}]{\$password }\end{DoxyParamCaption})}
+
+
+
+Set password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$password} & Password for connection \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00071}{71}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a193e15fbd25e2d6511081fe6156d1925}\label{classDigTech_1_1Database_1_1Connection_a193e15fbd25e2d6511081fe6156d1925}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!port@{port}}
+\index{port@{port}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{port()}{port()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::port (\begin{DoxyParamCaption}\item[{}]{\$port }\end{DoxyParamCaption})}
+
+
+
+Set port number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$port} & TCP port number \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00053}{53}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a9ac3e047a5355c7e7e2b2ea035636fb0}\label{classDigTech_1_1Database_1_1Connection_a9ac3e047a5355c7e7e2b2ea035636fb0}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!query@{query}}
+\index{query@{query}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::query (\begin{DoxyParamCaption}\item[{}]{\$sql,  }\item[{}]{\$multi = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Query database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$sql} & Query statement to execute \\
+\hline
+{\em \$multi} & Indicates statement string contains multiple statements \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection_a5a581e4262c7d872a3de439d1de7aa25}{Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+My\+SQL\textbackslash{}\+Connection}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a0d7195942557edfc8a8560cb3dac6920}\label{classDigTech_1_1Database_1_1Connection_a0d7195942557edfc8a8560cb3dac6920}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!schema@{schema}}
+\index{schema@{schema}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{schema()}{schema()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::schema (\begin{DoxyParamCaption}\item[{}]{\$schema }\end{DoxyParamCaption})}
+
+
+
+Set default schema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$schema} & Default schema name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00080}{80}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_aa798bc2dffcb2e06c89fed23f54c8f8e}\label{classDigTech_1_1Database_1_1Connection_aa798bc2dffcb2e06c89fed23f54c8f8e}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!username@{username}}
+\index{username@{username}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::username (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+
+
+
+Set user name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$username} & User name for connection \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00062}{62}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_aa05865f21cff0fabd3eb3cd3278a3c06}\label{classDigTech_1_1Database_1_1Connection_aa05865f21cff0fabd3eb3cd3278a3c06}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\$\_conn@{\$\_conn}}
+\index{\$\_conn@{\$\_conn}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\$\_conn}{$\_conn}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\$\+\_\+conn\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Database connection handle. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00017}{17}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_aa5d3b472dd740780c828d714491e3ca6}\label{classDigTech_1_1Database_1_1Connection_aa5d3b472dd740780c828d714491e3ca6}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\$\_host@{\$\_host}}
+\index{\$\_host@{\$\_host}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\$\_host}{$\_host}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\$\+\_\+host\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Hostname of database. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00012}{12}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_a337cfefeefad2f8af6c3c02b7d0480f1}\label{classDigTech_1_1Database_1_1Connection_a337cfefeefad2f8af6c3c02b7d0480f1}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\$\_password@{\$\_password}}
+\index{\$\_password@{\$\_password}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\$\_password}{$\_password}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\$\+\_\+password\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Password. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00015}{15}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_aa545a9257a9cdc8cb7f62717f2b824be}\label{classDigTech_1_1Database_1_1Connection_aa545a9257a9cdc8cb7f62717f2b824be}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\$\_port@{\$\_port}}
+\index{\$\_port@{\$\_port}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\$\_port}{$\_port}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\$\+\_\+port\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Port number. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00013}{13}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_ad758a5209a909eb6091544a7882d1c13}\label{classDigTech_1_1Database_1_1Connection_ad758a5209a909eb6091544a7882d1c13}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\$\_schema@{\$\_schema}}
+\index{\$\_schema@{\$\_schema}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\$\_schema}{$\_schema}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\$\+\_\+schema\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default schema name. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00016}{16}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+\mbox{\Hypertarget{classDigTech_1_1Database_1_1Connection_af0135cc3d5da4a26bbe217dd00859354}\label{classDigTech_1_1Database_1_1Connection_af0135cc3d5da4a26bbe217dd00859354}} 
+\index{DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}!\$\_username@{\$\_username}}
+\index{\$\_username@{\$\_username}!DigTech\textbackslash{}Database\textbackslash{}Connection@{DigTech\textbackslash{}Database\textbackslash{}Connection}}
+\doxysubsubsection{\texorpdfstring{\$\_username}{$\_username}}
+{\footnotesize\ttfamily Dig\+Tech\textbackslash{}\+Database\textbackslash{}\+Connection\+::\$\+\_\+username\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+User name. 
+
+
+
+Definition at line \mbox{\hyperlink{Connection_8php_source_l00014}{14}} of file \mbox{\hyperlink{Connection_8php_source}{Connection.\+php}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dig\+Tech/\+Database/\mbox{\hyperlink{Connection_8php}{Connection.\+php}}\end{DoxyCompactItemize}

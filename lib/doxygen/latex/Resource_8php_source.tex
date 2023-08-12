@@ -1,0 +1,326 @@
+\hypertarget{Resource_8php_source}{}\doxysection{Resource.\+php}
+\label{Resource_8php_source}\index{DigTech/REST/Resource.php@{DigTech/REST/Resource.php}}
+\mbox{\hyperlink{Resource_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceDigTech_1_1REST}{DigTech\(\backslash\)REST}};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00005}00005\ use\ \mbox{\hyperlink{classDigTech_1_1Database_1_1MySQL_1_1Connection}{DigTech\(\backslash\)Database\(\backslash\)MySQL\(\backslash\)Connection}}\ as\ Connection;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00006}00006\ use\ \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger}{DigTech\(\backslash\)Logging\(\backslash\)Logger}}\ as\ Logger;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00007}00007\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00008}00008\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00009}00009\ \textcolor{comment}{\ *\ \(\backslash\)class\ Resource}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00010}00010\ \textcolor{comment}{\ *\ \(\backslash\)ingroup\ API}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00011}00011\ \textcolor{comment}{\ *\ \(\backslash\)brief\ This\ abstract\ class\ serves\ as\ the\ base\ class\ for\ all\ REST\ APIs.\ This}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ class\ cannot\ be\ instantiated\ directly.}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00013}00013\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00014}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource}{00014}}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource}{Resource}}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00016}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a1ee5558906b27e31831ff3f5722c2db3}{00016}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a1ee5558906b27e31831ff3f5722c2db3}{\$\_method}}\ =\ \textcolor{stringliteral}{''};\ \ \ \ \ \ \textcolor{comment}{///<\ HTTP\ request\ method}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00017}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a73a75bb5a9ab2d4a6116c22deea2c46f}{00017}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a73a75bb5a9ab2d4a6116c22deea2c46f}{\$\_resource}}\ =\ \textcolor{stringliteral}{''};\ \ \ \ \textcolor{comment}{///<\ the\ requested\ resource\ name}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00018}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a30f143a986f46ac1313d72af5ce119fc}{00018}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a30f143a986f46ac1313d72af5ce119fc}{\$\_args}}\ =\ [];\ \ \ \ \ \ \ \ \textcolor{comment}{///<\ URI\ components\ following\ resource\ name}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00019}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a59b4c92e650c2d939374f6c8bde10d41}{00019}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a59b4c92e650c2d939374f6c8bde10d41}{\$\_query}}\ =\ [];\ \ \ \ \ \ \ \textcolor{comment}{///<\ query\ parameters\ from\ URI}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00020}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a3a5689f31374dc34e1631d1c192488ab}{00020}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a3a5689f31374dc34e1631d1c192488ab}{\$\_file}}\ =\ \textcolor{keyword}{null};\ \ \ \ \ \ \textcolor{comment}{///<\ input\ file\ information\ for\ HTTP\ PUT}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00021}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a85274776d7937b514905ffc582914f98}{00021}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a85274776d7937b514905ffc582914f98}{\$\_request}}\ =\ [];\ \ \ \ \ \textcolor{comment}{///<\ sanitized\ input\ data\ (\$\_GET\ and\ \$\_PUT\ values)}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00022}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a9f3292996675ca48776931e3309e0581}{00022}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a9f3292996675ca48776931e3309e0581}{\$\_types}}\ =\ [];\ \ \ \ \ \ \ \textcolor{comment}{///<\ data\ types\ for\ input\ parameters}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00023}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_ac963825c9330f55c28418c6e55f7e4c9}{00023}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_ac963825c9330f55c28418c6e55f7e4c9}{\$\_conn}}\ =\ \textcolor{keyword}{null};\ \ \ \ \ \ \textcolor{comment}{///<\ database\ connection\ handle\ for\ sql\ string\ sanitization}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00024}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a379280618b1c15b5c636d75f91ef64de}{00024}}\ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a379280618b1c15b5c636d75f91ef64de}{\$\_schema}}\ =\ \textcolor{stringliteral}{''};\ \ \ \ \ \ \textcolor{comment}{///<\ default\ database\ schema}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00025}00025\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00026}00026\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00027}00027\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Construct\ the\ object,\ allow\ for\ CORS,\ assemble\ and\ pre-\/process\ the\ data}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00028}00028\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$request\ The\ request\ that\ was\ received}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00029}00029\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$schema\ The\ default\ schema\ to\ be\ used\ for\ this\ API}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00030}00030\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00031}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a91f38283d585b44bba61ab87febe228f}{00031}}\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a91f38283d585b44bba61ab87febe228f}{\_\_construct}}(\$request,\ \$schema=\textcolor{stringliteral}{'digtech'})}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00032}00032\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00033}00033\ \ \ \ \ \ \ \$this-\/>\_schema\ =\ \$schema;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00035}00035\ \ \ \ \ \ \ \textcolor{comment}{//\ allow\ CORS}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00036}00036\ \ \ \ \ \ \ header(\textcolor{stringliteral}{"{}Access-\/Control-\/Allow-\/Orgin:\ *"{}});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00037}00037\ \ \ \ \ \ \ header(\textcolor{stringliteral}{"{}Access-\/Control-\/Allow-\/Methods:\ *"{}});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00039}00039\ \ \ \ \ \ \ \textcolor{comment}{//\ output\ will\ be\ encoded\ as\ json}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00040}00040\ \ \ \ \ \ \ header(\textcolor{stringliteral}{"{}Content-\/Type:\ application/json"{}});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00042}00042\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ URI\ arguments}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00043}00043\ \ \ \ \ \ \ \$this-\/>\_args\ =\ explode(\textcolor{charliteral}{'/'},\ rtrim(\$request));}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00044}00044\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ resource\ name\ and\ remove\ from\ \_args}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00045}00045\ \ \ \ \ \ \ \$this-\/>\_resource\ =\ array\_shift(\$this-\/>\_args);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00047}00047\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ HTTP\ request\ method}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00048}00048\ \ \ \ \ \ \ \$this-\/>\_method\ =\ \$\_SERVER[\textcolor{stringliteral}{'REQUEST\_METHOD'}];}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00049}00049\ \ \ \ \ \ \ \textcolor{comment}{//\ PUT\ or\ DELETE\ methods\ may\ be\ embedded\ in\ headers}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$this-\/>\_method\ ==\ \textcolor{stringliteral}{'POST'}\ \&\&\ array\_key\_exists(\textcolor{stringliteral}{'HTTP\_X\_HTTP\_METHOD'},\ \$\_SERVER))}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00051}00051\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\$\_SERVER[\textcolor{stringliteral}{'HTTP\_X\_HTTP\_METHOD'}]\ ==\ \textcolor{stringliteral}{'DELETE'})}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\_method\ =\ \textcolor{stringliteral}{'DELETE'};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\$\_SERVER[\textcolor{stringliteral}{'HTTP\_X\_HTTP\_METHOD'}]\ ==\ \textcolor{stringliteral}{'PUT'})}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\_method\ =\ \textcolor{stringliteral}{'PUT'};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ new\ \(\backslash\)Exception(\textcolor{stringliteral}{"{}Unexpected\ Header"{}});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00064}00064\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00066}00066\ \ \ \ \ \ \ global\ \mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00067}00067\ \ \ \ \ \ \ \mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}}\ =\ \mbox{\hyperlink{autoconfig_8php_ae7f525cab2d22820021f4526d8762871}{getGlobalConfiguration}}();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00069}00069\ \ \ \ \ \ \ \$conn\ =\ \mbox{\hyperlink{autoconfig_8php_ab7dd1efa48b39bebe69f2f870096866a}{\$globalConfiguration}}-\/>getSection(\textcolor{stringliteral}{'db-\/'}.\$this-\/>\_schema);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00071}00071\ \ \ \ \ \ \ \$this-\/>\_conn\ =\ \textcolor{keyword}{new}\ Connection();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00072}00072\ \ \ \ \ \ \ \$this-\/>\_conn-\/>configure(\$conn);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00073}00073\ \ \ \ \ \ \ \$this-\/>\_conn-\/>connect();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00075}00075\ \ \ \ \ \ \ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}{addVariable}}(\textcolor{stringliteral}{'request'},\ \textcolor{charliteral}{'s'});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00077}00077\ \ \ \ \ \ \ \textcolor{comment}{//\ extract\ incoming\ data\ for\ the\ HTTP\ request\ method}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00078}00078\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\$this-\/>\_method)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00079}00079\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'DELETE'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\_request\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitizeData}}(\$\_GET);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'POST'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\_request\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitizeData}}(\$\_POST);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'GET'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\_request\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitizeData}}(\$\_GET);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'PUT'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\_file\ =\ file\_get\_contents(\textcolor{stringliteral}{"{}php://input"{}});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ parse\_str(\$this-\/>\_file,\ \$vars);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \$parms\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitizeData}}(\$\_GET);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \$vars\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitizeData}}(\$vars);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\_request\ =\ array\_merge(\$parms,\ \$vars);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}{response}}(\textcolor{stringliteral}{'Invalid\ Method'},\ 405);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00099}00099\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00101}00101\ \ \ \ \ \ \ \textcolor{comment}{//\ add\ default\ variables\ for\ limit/offset\ in\ queries}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00102}00102\ \ \ \ \ \ \ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}{addVariable}}(\textcolor{stringliteral}{'limit'},\ \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00103}00103\ \ \ \ \ \ \ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}{addVariable}}(\textcolor{stringliteral}{'offset'},\ \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00105}00105\ \ \ \ \ \ \ \$hdrs\ =\ getallheaders();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00106}00106\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\$hdrs\ as\ \$hdr\ =>\ \$val)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00107}00107\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a21e4dcc3d4dc06a7ea9686949879b02d}{Logger::log}}(\textcolor{stringliteral}{"{}Header:\ \%s\ =>\ \%s\(\backslash\)n"{}},\ \$hdr,\ \$val);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00109}00109\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00111}00111\ \ \ \ \ \ \ \$msg\ =\ \textcolor{stringliteral}{"{}Method:\ \$this-\/>\_method\ Resource:\ \$this-\/>\_resource\ Args:\ \{"{}};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00112}00112\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\$this-\/>\_args\ as\ \$index\ =>\ \$arg)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00113}00113\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \$msg\ .=\ \textcolor{stringliteral}{"{}[\$index]=>\$arg\ "{}};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00115}00115\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00116}00116\ \ \ \ \ \ \ \$msg\ .=\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00118}00118\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(1)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00119}00119\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \$msg\ .=\ \textcolor{stringliteral}{'\ \{'};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\$this-\/>\_request\ as\ \$var\ =>\ \$arg)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \$msg\ .=\ \textcolor{stringliteral}{"{}[\$var]=>\$arg\ "{}};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \$msg\ .=\ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00126}00126\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00127}00127\ \ \ \ \ \ \ \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a21e4dcc3d4dc06a7ea9686949879b02d}{Logger::log}}(\textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ \$msg);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00128}00128\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00129}00129\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00130}00130\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00131}00131\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Add\ an\ input\ variable\ with\ type\ information\ (s\ -\/\ string,\ n\ -\/\ integer,\ f\ -\/\ float,\ d\ =\ date,\ t\ =\ time,\ dt\ =\ datetime,\ b\ =\ boolean)}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00132}00132\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$varname\ Variable\ name}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00133}00133\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$vartype\ Variable\ type}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00134}00134\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00135}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}{00135}}\ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acd96e19cbdcca2c7d210f13d925fcf1e}{addVariable}}(\$varname,\ \$vartype)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00136}00136\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00137}00137\ \ \ \ \ \ \ \$this-\/>\_types[\$varname]\ =\ \$vartype;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00138}00138\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00139}00139\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00140}00140\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00141}00141\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Process\ the\ request\ and\ return\ the\ response}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00142}00142\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)returns\ Output\ of\ service\ method}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00143}00143\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00144}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_ae2b0032c4a1c39673dd17fe214eb897f}{00144}}\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_ae2b0032c4a1c39673dd17fe214eb897f}{dispatch}}()}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00145}00145\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00146}00146\ \ \ \ \ \ \ \$output\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00148}00148\ \ \ \ \ \ \ \textcolor{comment}{//\ check\ to\ see\ if\ request\ method\ exists}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00149}00149\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{int})method\_exists(\$this,\ \$this-\/>\_method)\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00150}00150\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ output\ of\ the\ requested\ method}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \$output\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}{response}}(\$this-\/>\{\$this-\/>\_method\}(\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a30f143a986f46ac1313d72af5ce119fc}{\$this-\/>\_args}}),\ 200);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00153}00153\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00154}00154\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00155}00155\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ oops,\ method\ isn't\ supported\ }}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \$output\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}{response}}(\textcolor{stringliteral}{"{}No\ Method:\ \$this-\/>\_method"{}},\ 405);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00158}00158\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00160}00160\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$output;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00161}00161\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00162}00162\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00163}00163\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00164}00164\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Format\ the\ HTTP\ status\ header\ and\ json-\/encode\ response}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00165}00165\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$data\ Response\ data\ to\ encode\ and\ return}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00166}00166\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$status\ The\ HTTP\ status\ code\ for\ the\ response}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00167}00167\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)returns\ json-\/encoded\ response\ data}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00168}00168\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00169}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}{00169}}\ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a695625690e09243a867ae22bdd8fcbd6}{response}}(\$data,\ \$status\ =\ 200)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00170}00170\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00171}00171\ \ \ \ \ \ \ \textcolor{comment}{//\ set\ status\ header}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00172}00172\ \ \ \ \ \ \ header(\textcolor{stringliteral}{"{}HTTP/1.1\ "{}}\ .\ \$status\ .\ \textcolor{stringliteral}{"{}\ "{}}\ .\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a3d91e091d825ba0f3dbf3ebf92dcb6cc}{requestStatus}}(\$status));}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00174}00174\ \ \ \ \ \ \ \textcolor{comment}{//\ log\ the\ request\ status}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00175}00175\ \ \ \ \ \ \ \$msg\ =\ \textcolor{stringliteral}{"{}Status:\ \$status"{}};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00176}00176\ \ \ \ \ \ \ \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a21e4dcc3d4dc06a7ea9686949879b02d}{Logger::log}}(\textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}},\ \$msg);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00178}00178\ \ \ \ \ \ \ \textcolor{comment}{//\ dump\ the\ data\ to\ the\ log\ if\ the\ request\ failed}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00179}00179\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\$status\ !=\ 200)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00180}00180\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00181}00181\ \ \ \ \ \ \ \ \ \ ob\_start();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00182}00182\ \ \ \ \ \ \ \ \ \ var\_dump(\$data);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \$str\ =\ ob\_get\_contents();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00184}00184\ \ \ \ \ \ \ \ \ \ ob\_end\_clean();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDigTech_1_1Logging_1_1Logger_a21e4dcc3d4dc06a7ea9686949879b02d}{Logger::log}}(\textcolor{stringliteral}{"{}Data:\ \%s"{}},\ \$str);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00186}00186\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00188}00188\ \ \ \ \ \ \ \textcolor{comment}{//\ return\ response\ data\ as\ json-\/encoded\ string}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00189}00189\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ json\_encode(\$data);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00190}00190\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00191}00191\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00192}00192\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00193}00193\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Sanitize\ input\ data}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00194}00194\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$data\ Input\ data\ to\ be\ sanitized}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00195}00195\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$type\ Data\ type\ for\ input\ data\ if\ not\ array}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00196}00196\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)returns\ Sanitized\ input\ data}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00197}00197\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00198}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{00198}}\ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitizeData}}(\$data,\ \$type=\textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00199}00199\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00200}00200\ \ \ \ \ \ \ \$sanitized\_data\ =\ array();}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00201}00201\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_array(\$data))}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00202}00202\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\$data\ as\ \$k\ =>\ \$v)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \$sanitized\_data[\$k]\ =\ \$this-\/>\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_acc0c3070a7098f4728e736af5e99b8b5}{sanitizeData}}(\$v,\ \$this-\/>\_types[\$k]);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00207}00207\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00208}00208\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00209}00209\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \$sanitized\_data\ =\ trim(strip\_tags(\$data));}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\$type)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'s'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$sanitized\_data\ =\ \$this-\/>\_conn-\/>escapeString(\$sanitized\_data);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'n'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$sanitized\_data\ =\ (int)\$sanitized\_data;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'f'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$sanitized\_data\ =\ (float)\$sanitized\_data;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'d'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$d\ =\ date\_parse(\$sanitized\_data);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$sanitized\_data\ =\ sprintf(\textcolor{stringliteral}{"{}\%04d-\/\%02d-\/\%02d"{}},}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$d[\textcolor{stringliteral}{'year'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$d[\textcolor{stringliteral}{'month'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$d[\textcolor{stringliteral}{'day'}]);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$t\ =\ date\_parse(\$sanitized\_data);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$sanitized\_data\ =\ sprintf(\textcolor{stringliteral}{"{}\%02d:\%02d:\%02d"{}},}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$t[\textcolor{stringliteral}{'hour'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$t[\textcolor{stringliteral}{'minute'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$t[\textcolor{stringliteral}{'second'}]);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{'dt'}:}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$dt\ =\ date\_parse(\$sanitized\_data);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$sanitized\_data\ =\ sprintf(\textcolor{stringliteral}{"{}\%04d-\/\%02d-\/\%02d\ \%02d:\%02d:\%02d"{}},}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$dt[\textcolor{stringliteral}{'year'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$dt[\textcolor{stringliteral}{'month'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$dt[\textcolor{stringliteral}{'day'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$dt[\textcolor{stringliteral}{'hour'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$dt[\textcolor{stringliteral}{'minute'}],}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$dt[\textcolor{stringliteral}{'second'}]);}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00247}00247\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00248}00248\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$sanitized\_data;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00249}00249\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00250}00250\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00251}00251\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00252}00252\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Get\ the\ HTTP\ status\ string\ for\ a\ status\ code}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00253}00253\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$code\ The\ HTTP\ status\ code}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00254}00254\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)returns\ Text\ associated\ with\ HTTP\ status\ code}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00255}00255\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00256}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a3d91e091d825ba0f3dbf3ebf92dcb6cc}{00256}}\ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a3d91e091d825ba0f3dbf3ebf92dcb6cc}{requestStatus}}(\$code)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00257}00257\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00258}00258\ \ \ \ \ \ \ \$status\ =\ array}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00259}00259\ \ \ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00260}00260\ \ \ \ \ \ \ \ \ \ 200\ =>\ \textcolor{stringliteral}{'OK'},}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00261}00261\ \ \ \ \ \ \ \ \ \ 401\ =>\ \textcolor{stringliteral}{'Unauthorized'},}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00262}00262\ \ \ \ \ \ \ \ \ \ 404\ =>\ \textcolor{stringliteral}{'Not\ Found'},\ \ \ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00263}00263\ \ \ \ \ \ \ \ \ \ 405\ =>\ \textcolor{stringliteral}{'Method\ Not\ Allowed'},}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00264}00264\ \ \ \ \ \ \ \ \ \ 500\ =>\ \textcolor{stringliteral}{'Internal\ Server\ Error'},}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00265}00265\ \ \ \ \ \ \ );\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00266}00266\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\$status[\$code])?\$status[\$code]:\$status[500];\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00267}00267\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00268}00268\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00269}00269\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00270}00270\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Get\ request\ form\ data}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00271}00271\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$varName\ Name\ of\ request\ variable\ to\ get}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00272}00272\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$default\ Default\ value\ if\ request\ variable\ is\ empty}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00273}00273\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$isSet\ Indicates\ if\ variable\ was\ set}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00274}00274\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00275}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a31df9462d4ccf8a08dd1271e4f911851}{00275}}\ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a31df9462d4ccf8a08dd1271e4f911851}{getRequestVariable}}(\$varName,\ \$default,\ \&\$isSet=\textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00276}00276\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00277}00277\ \ \ \ \ \ \ \$ret\ =\ \$default;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00278}00278\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(array\_key\_exists(\$varName,\ \$this-\/>\_request))}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00279}00279\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \$ret\ =\ \$this-\/>\_request[\$varName];}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\$isSet\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \$isSet\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00285}00285\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00286}00286\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00287}00287\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\$isSet\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \$isSet\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00292}00292\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00293}00293\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$ret;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00294}00294\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00295}00295\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00296}00296\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00297}00297\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Set\ query\ variables\ from\ URL\ query}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00298}00298\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$queryVars\ The\ list\ of\ variables\ to\ received\ on\ request}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00299}00299\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00300}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a4b8f5cb35e30be9b5691330c3a8dc604}{00300}}\ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a4b8f5cb35e30be9b5691330c3a8dc604}{setQueryVariables}}(\$queryVars)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00301}00301\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00302}00302\ \ \ \ \ \ \ \$this-\/>\_query\ =\ \$queryVars;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00303}00303\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00304}00304\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00305}00305\ \textcolor{comment}{\ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00306}00306\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Retrieve\ query\ variable}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00307}00307\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)param\ \$varName\ Name\ of\ variable\ to\ retrieve}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00308}00308\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)returns\ Value\ of\ variable\ (mixed)\ or\ null}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00309}00309\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00310}\mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a204208a60d23413516284237734e4fa4}{00310}}\ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTech_1_1REST_1_1Resource_a204208a60d23413516284237734e4fa4}{getQueryVariable}}(\$varName)}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00311}00311\ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00312}00312\ \ \ \ \ \ \ \$ret\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00314}00314\ \ \ \ \ \ \ \$ret\ =\ \$this-\/>\_query[\$varName]\ ??\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00316}00316\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$ret;}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00317}00317\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00318}00318\ \}}
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{Resource_8php_source_l00320}00320\ ?>}
+
+\end{DoxyCode}

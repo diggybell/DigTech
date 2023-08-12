@@ -1,0 +1,59 @@
+\hypertarget{autoload_8php_source}{}\doxysection{autoload.\+php}
+\mbox{\hyperlink{autoload_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00001}00001\ <?php}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00002}00002\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00003}00003\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00004}00004\ \textcolor{comment}{\ *\ \(\backslash\)class\ DigTechAutoloader}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00005}00005\ \textcolor{comment}{\ *\ \(\backslash\)brief\ This\ class\ implements\ an\ autoloader\ that\ is\ similar\ to\ the\ PSR-\/4\ standard.}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00006}00006\ \textcolor{comment}{\ *\ \(\backslash\)todo\ Adapt\ to\ be\ PSR-\/4\ compliant}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00007}00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00008}\mbox{\hyperlink{classDigTechAutoloader}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDigTechAutoloader}{DigTechAutoloader}}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00009}00009\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00010}00010\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00011}00011\ \textcolor{comment}{\ \ \ \ \ *\ \(\backslash\)brief\ Object\ constructor\ which\ registers\ the\ autoload\ handler.}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00012}00012\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00013}\mbox{\hyperlink{classDigTechAutoloader_adda5fba2d3828bbb19cb923ec0af8007}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTechAutoloader_adda5fba2d3828bbb19cb923ec0af8007}{\_\_construct}}()}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00015}00015\ \ \ \ \ \ \ \ \ spl\_autoload\_register(array(\$this,\ \textcolor{stringliteral}{'loader'}));}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00017}00017\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00018}00018\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00019}00019\ \textcolor{comment}{\ \ \ \ \ *\ \(\backslash\)brief\ This\ is\ the\ autoload\ handler\ called\ for\ DigTech\ classes}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00020}00020\ \textcolor{comment}{\ \ \ \ \ *\ \(\backslash\)param\ \$className\ The\ name\ of\ the\ class\ to\ be\ loaded}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00021}00021\ \textcolor{comment}{\ \ \ \ \ *\ \(\backslash\)todo\ This\ method\ needs\ error\ handling\ improvements}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00022}00022\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00023}\mbox{\hyperlink{classDigTechAutoloader_ac8dd503a14bf181fbccd3520db3b8466}{00023}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{function}\ \mbox{\hyperlink{classDigTechAutoloader_ac8dd503a14bf181fbccd3520db3b8466}{loader}}(\$className)}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00025}00025\ \ \ \ \ \ \ \ \ \$prefix\ =\ \textcolor{stringliteral}{'DigTech\(\backslash\)\(\backslash\)'};}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00026}00026\ \ \ \ \ \ \ \ \ \$base\_dir\ =\ \_\_DIR\_\_\ .\ \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ for\ DigTech\ class}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00029}00029\ \ \ \ \ \ \ \ \ \$len\ =\ strlen(\$prefix);}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strncmp(\$prefix,\ \$className,\ \$len)\ !==\ 0)}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00035}00035\ \ \ \ \ \ \ \ \ \$file\ =\ \$base\_dir\ .\ str\_replace(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\ \textcolor{charliteral}{'/'},\ \$className)\ .\ \textcolor{stringliteral}{'.php'};}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (file\_exists(\$file))}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ include\_once(\$file);}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ new\ \(\backslash\)Exception(\textcolor{stringliteral}{"{}Unable\ to\ load\ class\ \$className."{}});}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00047}00047\ \textcolor{comment}{//\ Create\ the\ autoloader\ object}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00048}00048\ \textcolor{comment}{///<\ \(\backslash\)todo\ some\ protections\ need\ to\ be\ put\ around\ this}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00049}00049\ \textcolor{comment}{}\textcolor{keywordflow}{if}(!isset(\$dtal))}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00051}00051\ \ \ \ \ \$dtal\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDigTechAutoloader}{DigTechAutoloader}}();}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{autoload_8php_source_l00054}00054\ ?>}
+
+\end{DoxyCode}
