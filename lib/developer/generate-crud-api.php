@@ -87,6 +87,11 @@ foreach($pieces as $piece)
    $keyfld .= ucfirst($piece);
 }
 
+$fieldNames = [];
+$columnNames = [];
+$dataTypes = [];
+
+// disable logging so output can be captured
 Logger::setEnabled(false);
 
 $db = new Connection();
@@ -96,10 +101,6 @@ $db->username($user);
 $db->password($password);
 $db->schema($database);
 
-$fieldNames = [];
-$columnNames = [];
-$dataTypes = [];
-
 if($db->connect())
 {
    $sql = "DESCRIBE $table";
@@ -108,14 +109,20 @@ if($db->connect())
    {
       while($row = $db->fetch($res))
       {
+         // create user level column name (my_col = MyCol)
          $var = createVarName($row['Field']);
+
+         // create mapping for db -> user and user -> db column names
          $fieldNames[$var] = $row['Field'];
          $columnNames[$row['Field']] = $var;
+
+         // breakout the data type information for the column
          list($type, $length,$dec) = sscanf($row['Type'], "%[^(](%d,%d)");
-         $dataTypes[$var]['type'] = $type;
-         $dataTypes[$var]['length'] = (isset($length)) ? $length : 0;
-         $dataTypes[$var]['dec'] = (isset($dec)) ? $dec : 0;
-         $dataTypes[$var]['prikey'] = ($row['Key'] == 'PRI') ? 1 : 0;
+
+         $dataTypes[$var]['type']    = $type;
+         $dataTypes[$var]['length']  = (isset($length)) ? $length : 0;
+         $dataTypes[$var]['dec']     = (isset($dec)) ? $dec : 0;
+         $dataTypes[$var]['prikey']  = ($row['Key'] == 'PRI') ? 1 : 0;
          $dataTypes[$var]['autoinc'] = ($row['Extra'] == 'auto_increment') ? 1 : 0;
       }
    }
