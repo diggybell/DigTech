@@ -4,6 +4,7 @@ namespace DigTech\REST;
 
 use \DigTech\REST\SecureResource as Resource;
 use \DigTech\Database\Record as Record;
+use \DigTech\Logging\Logger as Logger;
 
 /**
    \class CRUDResource
@@ -76,7 +77,7 @@ class CRUDResource extends Resource
       }
       return array('ReturnCode' => $result, 'data' => $data);
    }
-/*
+
    public function POST()
    {
       $result = 'Failed';
@@ -84,7 +85,7 @@ class CRUDResource extends Resource
 
       if($this->_conn->connect())
       {
-         $rec = new DBRecord($this->_conn, '<?php echo $table; ?>', array('<?php echo $keycol; ?>' => 0));
+         $rec = new Record($this->_conn, $this->_tableName, array($this->_primaryKey => 0));
 
          foreach($this->_userToDB as $field => $column)
          {
@@ -97,7 +98,7 @@ class CRUDResource extends Resource
 
          if($rec->insert())
          {
-            $data = array('<?php echo $keyfld; ?>' => $rec->get('<?php echo $keycol; ?>'));
+            $data = array($this->_primaryKey => $rec->get($this->_primaryKey));
             $result = 'Success';
          }
          else
@@ -107,9 +108,7 @@ class CRUDResource extends Resource
       }
       else
       {
-         Logger::log(LOG_TYPE_FRONTEND,
-                     LOG_LEVEL_ERROR,
-                     "Unable to connect to database: %s",
+         Logger::log("Unable to connect to database: %s",
                      $this->_conn->error());
       }
 
@@ -123,9 +122,9 @@ class CRUDResource extends Resource
 
       if($this->_conn->connect())
       {
-         $seq = $this->getRequestVariable('<?php echo $keyfld; ?>', 0);
+         $seq = $this->getRequestVariable($this->_dbToUser[$this->_primaryKey], 0);
 
-         $rec = new DBRecord($this->_conn, '<?php echo $table; ?>', array('<?php echo $keycol; ?>' => $seq));
+         $rec = new Record($this->_conn, $this->_tableName, array($this->_primaryKey => $seq));
          if($rec->read())
          {
             foreach($this->_userToDB as $field => $column)
@@ -149,9 +148,7 @@ class CRUDResource extends Resource
       }
       else
       {
-         Logger::log(LOG_TYPE_FRONTEND,
-                     LOG_LEVEL_ERROR,
-                     "Unable to connect to database: %s",
+         Logger::log("Unable to connect to database: %s",
                      $this->_conn->error());
       }
 
@@ -165,11 +162,10 @@ class CRUDResource extends Resource
 
       if($this->_conn->connect())
       {
-         //$seq = $this->getRequestVariable('<?php echo $keyfld; ?>', 0);
          $seq = $this->_args[0];
          if($seq > 0)
          {
-            $rec = new DBRecord($this->_conn, '<?php echo $table; ?>', array('<?php echo $keycol; ?>' => $seq));
+            $rec = new Record($this->_conn, $this->_tableName, array($this->_primaryKey => $seq));
             if($rec->read())
             {
               if($rec->delete())
@@ -193,15 +189,12 @@ class CRUDResource extends Resource
       }
       else
       {
-         Logger::log(LOG_TYPE_FRONTEND,
-                     LOG_LEVEL_ERROR,
-                     "Unable to connect to database: %s",
+         Logger::log("Unable to connect to database: %s",
                      $this->_conn->error());
       }
 
       return array('ReturnCode' => $result, 'data' => $data);
    }
-*/
 }
 
 ?>

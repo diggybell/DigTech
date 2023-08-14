@@ -79,7 +79,7 @@ class Connection extends BaseConnection
  
    public function query($sql, $multi=false)
    {
-      //Logger::log(LOG_TYPE_DATABASE, LOG_LEVEL_DEBUG, "SQL: %s", $sql);
+      //Logger::log("SQL: %s\n", $sql);
 
       if($multi)
       {
