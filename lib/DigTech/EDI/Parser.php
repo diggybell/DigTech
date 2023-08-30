@@ -2,6 +2,12 @@
 
 namespace DigTech\EDI;
 
+/**
+ * \class Parser
+ * \ingroup EDI
+ * \brief This class provides functionality for processing EDI files
+ */
+
 class Parser
 {
    const ELEMENT_SEPARATOR = '*';

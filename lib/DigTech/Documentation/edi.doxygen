@@ -1,0 +1,7 @@
+/**
+\page edi_docs DigTech EDI Classes
+\ingroup EDI
+\section edidocs_intro Introduction
+The DigTech EDI classes provide features for processing EDI files.
+
+*/
