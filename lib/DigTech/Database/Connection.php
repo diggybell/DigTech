@@ -21,8 +21,8 @@ abstract class Connection
     */
    public function __construct()
    {
-      $this->_host = '';
-      $this->_port = '';
+      $this->_host = 'localhost';
+      $this->_port = '3306';
       $this->_username = '';
       $this->_password = '';
       $this->_schema = '';
