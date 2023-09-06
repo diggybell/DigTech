@@ -75,7 +75,7 @@ class healthcheck extends SecureResource
         $data['php']['version'] = phpversion();
         $data['php']['sapi']    = php_sapi_name();
         $data['php']['memory_limit'] = ini_get('memory_limit');
-        $data['php']['memory_used']  = number_format(memory_get_usage(),      0);
+        $data['php']['memory_used']  = number_format(memory_get_usage(), 0);
     }
 
     function getSystemInfo(&$data)
@@ -100,8 +100,8 @@ class healthcheck extends SecureResource
             $data[$class][$item] = php_uname($parm);
         }
 
-        $data['sys']['disk_total']   = number_format(disk_total_space('/'),   0);
-        $data['sys']['disk_free']    = number_format(disk_free_space('/'),    0);
+        $data['sys']['disk_total']   = number_format(disk_total_space('/'), 0);
+        $data['sys']['disk_free']    = number_format(disk_free_space('/'), 0);
     }
 }
 
