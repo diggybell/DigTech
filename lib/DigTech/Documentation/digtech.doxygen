@@ -21,5 +21,6 @@ of functional classes that provide robust and well-tested functionality.
 \defgroup Database DigTech Database Library Documentation
 \defgroup API DigTech API Documentation
 \defgroup EDI DigTech EDI Documentation
+\defgroup Services DigTech Application Services
 
 */

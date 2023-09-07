@@ -1,0 +1,72 @@
+/**
+\page action_docs Action Manager Service
+\ingroup Services
+\section actionmgr_intro Introduction
+
+The Action Manager is a data aggregation service that can be used to capture and associate actions that take place in multiple systems across a company
+or enterprise. As one action happens it may influence or trigger additional actions. This service acts both the collector of actions and the initiator
+for triggered actions.
+
+\subsection actionmgr_envelope Action Envelope
+
+The Action Envelope contains the details on an action that occurs in the system. It indication information that is common to all actions.
+
+\code
+{
+    "source": "SomeHost.Domain.TLD",
+    "timestamp": "2023-09-01 08:00:00",
+    "performer": "Some App",
+    "class": "order",
+    "order": {
+        "salesorder": "10200019238",
+        "customernumber": "2694",
+        "saledate": "2023-09-01",
+        "status": "PENDING"
+    }
+    "details": {
+        "action": "OrderReceived",
+        "source": "EDI",
+        "status": "Success",
+        "timestamp": "2023-09-01 07:58:03"
+    }
+}
+\endcode
+
+\subsection actionmgr_performer Action Performer
+
+An application or system that performs actions
+
+\subsection actionmgr_class Action Class
+
+An indicator of an action class. A class may have multiple Actions (see below).
+
+The "class" element should be used to retrieve the class object of the same name from the incoming object.
+
+\code
+{
+    "class": "order",
+    "order": {
+        "salesorder": "10200019238",
+        "customernumber": "2694",
+        "saledate": "2023-09-01",
+        "status": "PENDING"
+    }
+}
+\endcode
+
+\subsection actionmgr_action Action Detail
+
+A specific type of action that is performed in the system. The details of the action will be dependent on the action performed.
+
+\code
+{
+    "details": {
+        "action": "OrderReceived",
+        "source": "API",
+        "status": "Success",
+        "timestamp": "2023-09-01 07:58:03"
+    }
+}
+\endcode
+
+ */
