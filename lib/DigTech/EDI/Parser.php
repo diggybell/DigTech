@@ -282,7 +282,7 @@ class Parser
 
    /**
     * \brief Look up the parent segment from a child segment
-    * \param The segment to retrieve the parent for (if it is a child)
+    * \param $segment The segment to retrieve the parent for (if it is a child)
     * \returns The parent segment if the input segment is a child, the input segment otherwise
     */
    protected function getParentSegment($segment)

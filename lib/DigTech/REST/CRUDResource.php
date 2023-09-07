@@ -7,8 +7,10 @@ use \DigTech\Database\Record as Record;
 use \DigTech\Logging\Logger as Logger;
 
 /**
-   \class CRUDResource
-*/
+ * \class CRUDResource
+ * \ingroup API
+ * \brief This class provides core CRUD operation support.
+ */
 
 class CRUDResource extends Resource
 {

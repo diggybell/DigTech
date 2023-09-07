@@ -54,7 +54,7 @@ function mapDataTypes($sqlType)
 }
 
 /**
- * generate-rest.php <host> <user> <password> <database> <table> <keyfield>
+ * generate-rest.php {host} {user} {password} {database} {table} {keyfield}
  */
 
 if($argc != 7)
