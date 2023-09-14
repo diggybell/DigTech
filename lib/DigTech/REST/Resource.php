@@ -74,6 +74,8 @@ abstract class Resource
 
       $this->addVariable('request', 's');
 
+      $this->_file = file_get_contents("php://input");
+
       // extract incoming data for the HTTP request method
       switch($this->_method)
       {
@@ -87,7 +89,6 @@ abstract class Resource
             $this->_request = $this->sanitizeData($_GET);
             break;
          case 'PUT':
-            $this->_file = file_get_contents("php://input");
             parse_str($this->_file, $vars);
             $parms = $this->sanitizeData($_GET);
             $vars = $this->sanitizeData($vars);
@@ -314,6 +315,11 @@ abstract class Resource
       $ret = $this->_query[$varName] ?? null;
 
       return $ret;
+   }
+
+   public function getContent()
+   {
+      return $this->_file;
    }
 }
 
