@@ -12,8 +12,13 @@ use DigTech\Logging\Logger as Logger;
  * \class test_table
  */
 
-class test_table extends Resource
+class post_action extends Resource
 {
+    public function __construct()
+    {
+
+    }
+    
     public function POST()
     {
     }
