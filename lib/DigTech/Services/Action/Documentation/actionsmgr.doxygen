@@ -7,69 +7,115 @@ The Action Manager is a data aggregation service that can be used to capture and
 or enterprise. As one action happens it may influence or trigger additional actions. This service acts both the collector of actions and the initiator
 for triggered actions.
 
-\subsection actionmgr_envelope Action Envelope
+\section actionmgr_concepts Concepts
 
+\li Envelope
+\par
 The Action Envelope contains the details on an action that occurs in the system. It indication information that is common to all actions.
+
+\li Source
+\par
+The system where the action was performed.
+
+\li Performer
+\par
+An application that performs actions. One example of a performer might be a REST API that receives orders from an external customer. Another
+performer might be the warehouse application that picks the products for the order. A performer will generally be an application or application system
+that implements a portion of a business process.
+
+\li Class
+\par
+An indicator of an action class. A class may have multiple Actions (see below). In many cases the class will represent a document or entity that is
+processed by one or more systems. Some examples of classes might be order, shipment, or schedule/route.
+The "class" element should be used to retrieve the class object of the same name from the incoming object.
+\note Action Classes will be common candidates for maintaining a 'current state' for an entity. For example, what is the current status of an order?
+
+\li Details
+\par
+A specific type of action that is performed in the system. The details of the action will be dependent on the action performed.
+
+\section actionmgr_commflow Communication Flow
+
+The model for posting actions to the event manager uses a simple HTTP POST action with a JSON payload.
+
+\msc
+    "Application System","Action Manager";
+
+    "Application System" => "Action Manager" [label="POST(JSON)"];
+    "Application System" << "Action Manager" [label="Status"];
+\endmsc
+
+
+
+\section actionmgr_json_format JSON Formats
+
+\subsection actionmgr_sample Sample Action
 
 \code
 {
-    "source": "SomeHost.Domain.TLD",
-    "timestamp": "2023-09-01 08:00:00",
-    "performer": "Some App",
-    "class": "order",
-    "order": {
-        "salesorder": "10200019238",
-        "customernumber": "2694",
-        "saledate": "2023-09-01",
-        "status": "PENDING"
-    },
-    "details": {
-        "action": "OrderReceived",
-        "source": "EDI",
-        "status": "Success",
-        "timestamp": "2023-09-01 07:58:03"
+    "action": {
+        "source": "System",
+        "timestamp": "2023-09-11 23:00",
+        "performer": "Import",
+        "class": "order",
+        "order": {
+            "salesorder": "SO1000-00001",
+            "customernumber": "CN100-001",
+            "saledate": "2023-09-11",
+            "status": "PENDING"
+        },
+        "details": {
+            "action": "OrderReceived",
+            "source": "API",
+            "status": "SUCCESS",
+            "timestamp": "2023-09-11 23:00:00"
+        }
     }
 }
 \endcode
 
-\subsection actionmgr_performer Action Performer
-
-An application or system that performs actions. One example of a performer might be a REST API that receives orders from an external customer. Another
-performer might be the warehouse application that picks the products for the order. A performer will generally be an application or application system
-that implements a portion of a business process.
-
-\subsection actionmgr_class Action Class
-
-An indicator of an action class. A class may have multiple Actions (see below). In many cases the class will represent a document or entity that is
-processed by one or more systems. Some examples of classes might be order, shipment, or schedule/route.
-
-The "class" element should be used to retrieve the class object of the same name from the incoming object.
+\subsection actionmgr_envelope Action Envelope
 
 \code
 {
-    "class": "order",
-    "order": {
-        "salesorder": "10200019238",
-        "customernumber": "2694",
-        "saledate": "2023-09-01",
-        "status": "PENDING"
-    },
+    "action": {
+        "source": "System",
+        "timestamp": "2023-09-11 23:00",
+        "performer": "Import",
+        "class": "order",
+    }
 }
 \endcode
 
-\note Action Classes will be common candidates for maintaining a 'current state' for an entity. For example, what is the current status of an order?
+\subsection actionmgr_class Action Class
 
-\subsection actionmgr_action Action Detail
 
-A specific type of action that is performed in the system. The details of the action will be dependent on the action performed.
 
 \code
 {
-    "details": {
-        "action": "OrderReceived",
-        "source": "API",
-        "status": "Success",
-        "timestamp": "2023-09-01 07:58:03"
+    "action": {
+        "class": "order",
+        "order": {
+            "salesorder": "SO1000-00001",
+            "customernumber": "CN100-001",
+            "saledate": "2023-09-11",
+            "status": "PENDING"
+        },
+    }
+}
+\endcode
+
+\subsection actionmgr_action Action Detail
+
+\code
+{
+    "action": {
+        "details": {
+            "action": "OrderReceived",
+            "source": "API",
+            "status": "SUCCESS",
+            "timestamp": "2023-09-11 23:00:00"
+        }
     }
 }
 \endcode
