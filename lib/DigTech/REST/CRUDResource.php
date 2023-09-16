@@ -77,7 +77,7 @@ class CRUDResource extends Resource
             }
          }
       }
-      return array('ReturnCode' => $result, 'data' => $data);
+      return [ 'status' => $result, 'data' => $data ];
    }
 
    public function POST()
@@ -114,7 +114,7 @@ class CRUDResource extends Resource
                      $this->_conn->error());
       }
 
-      return array('ReturnCode' => $result, 'data' => $data);
+      return [ 'status' => $result, 'data' => $data ];
    }
 
    public function PUT()
@@ -154,7 +154,7 @@ class CRUDResource extends Resource
                      $this->_conn->error());
       }
 
-      return array('ReturnCode' => $result, 'data' => $data);
+      return [ 'status' => $result, 'data' => $data ];
    }
 
    public function DELETE()
@@ -195,7 +195,7 @@ class CRUDResource extends Resource
                      $this->_conn->error());
       }
 
-      return array('ReturnCode' => $result, 'data' => $data);
+      return [ 'status' => $result, 'data' => $data ];
    }
 }
 

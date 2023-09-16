@@ -68,7 +68,7 @@ class post_action extends Resource
 
                 $recAction->set('class_seq', $classSeq);
                 $recAction->set('performer_seq', $performerSeq);
-                
+
                 $recAction->set('action_timestamp', $action->action->timestamp);
                 $recAction->set('action_payload', $json);
 
@@ -78,15 +78,20 @@ class post_action extends Resource
                 }
                 else
                 {
+                    Logger::error("Unable to insert action into database\n");
                 }
+            }
+            else
+            {
+                Logger::error("Invalid Class or Performer specified (%s/%s)\n", $action->action->class, $action->action->performer);
             }
         }
         else
         {
-            Logger::log("ERROR: Invalid object\n");
+            Logger::error("Invalid JSON object\n");
         }
 
-        return ['Status'=>$status, 'data'=>$data];
+        return ['status'=>$status, 'data'=>$data];
     }
 }
 

@@ -45,7 +45,7 @@ class healthcheck extends SecureResource
         $this->getDatabaseInfo($data);
         $this->getPHPInfo($data);
 
-        return ['Status'=>'Success', 'data'=>$data];
+        return ['status'=>'Success', 'data'=>$data];
     }
 
     protected function getHTTPDInfo(&$data)
