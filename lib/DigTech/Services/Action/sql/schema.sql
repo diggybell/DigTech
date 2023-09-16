@@ -43,6 +43,7 @@ CREATE TABLE action_log
     performer_seq           INTEGER         NOT NULL,
     action_timestamp        DATETIME,
     action_processed        DATETIME        DEFAULT NULL,
+    action_payload          TEXT            NOT NULL,
 
     create_by               VARCHAR(40)     DEFAULT NULL,
     create_date             DATETIME        DEFAULT NULL,

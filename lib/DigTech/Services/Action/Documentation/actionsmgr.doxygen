@@ -45,8 +45,6 @@ The model for posting actions to the event manager uses a simple HTTP POST actio
     "Application System" << "Action Manager" [label="Status"];
 \endmsc
 
-
-
 \section actionmgr_json_format JSON Formats
 
 \subsection actionmgr_sample Sample Action
@@ -119,5 +117,49 @@ The model for posting actions to the event manager uses a simple HTTP POST actio
     }
 }
 \endcode
+
+\section actionmgr_processing Action Processing
+
+All actions will be processed sequentially in the order they were created via the Action API. Several things will take place when the actions are processed.
+
+\subsection actionmgr_processing_common Common Processing
+
+The processing for all events will include the following steps.
+
+\li Validate source
+\li Validate action class and retrieve class sequence
+\li Validate action performer and retrieve performer sequence
+\li Update processed timestamp
+
+\subsection actionmgr_processing_class Class Processing
+
+The processing for the action class will consist of aggregation of data to provide a corrent view of an entity.
+
+\li Create or update existing entity
+\li Update entity to reflect the current state
+
+\subsection actionmgr_processing_details Detail Processing
+
+The processing for action details will be dependent on the type of action being performed. There may be updates to the aggregated entity.
+
+\section actionmgr_handler Action Handler
+
+\subsection actionmgr_handler_concept Handler Concepts
+
+Each action handler must be derived from ActionHandler and implement three required methods.
+
+\li start()
+This method will be called when the action processor is loaded. This method should be used to
+perform initial setup for the event handler such as connecting to the database and retrieving
+any data required for validation.
+
+\li process()
+This method will be called as each new action is retrieved. This method should contain the
+processing for the event.
+
+\li finish()
+This method will be called after all current actions have been processed and before the processor
+terminates. This method is useful for aggregating action data.
+
 
  */

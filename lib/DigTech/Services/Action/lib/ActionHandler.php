@@ -19,7 +19,7 @@ class ActionHandler
     /**
      * \brief Initialize handler
      */
-    public function init()
+    public function start()
     {
     }
 
@@ -33,7 +33,7 @@ class ActionHandler
     /**
      * \brief Cleanup handler
      */
-    public function cleanup()
+    public function finish()
     {
     }
 }
