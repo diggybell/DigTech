@@ -58,7 +58,7 @@ CREATE TRIGGER <?php echo $table; ?>_insert BEFORE INSERT ON <?php echo $table; 
    BEGIN
       SET NEW.create_date = NOW();
       SET NEW.create_by   = CURRENT_USER;
-      SET NEW.modify_date = '0000-00-00 00:00:00';
+      SET NEW.modify_date = NOW();
       SET NEW.modify_by   = CURRENT_USER;
    END; $$
 DELIMITER ;
