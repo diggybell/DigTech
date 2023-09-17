@@ -90,9 +90,9 @@ class healthcheck extends SecureResource
            'm' => 'sys_architecture',
         ];
 
-        $data['sys']['datetime']  = date('Y-m-d H:i:s');
-        $data['sys']['hostname']  = gethostname();
-        $data['sys']['hostip']    = gethostbyname(gethostname());
+        $data['sys']['datetime'] = date('Y-m-d H:i:s');
+        $data['sys']['hostname'] = gethostname();
+        $data['sys']['hostip']   = gethostbyname(gethostname());
 
         foreach($parms as $parm => $desc)
         {
@@ -100,9 +100,11 @@ class healthcheck extends SecureResource
             $data[$class][$item] = php_uname($parm);
         }
 
-        $data['sys']['disk_total']   = number_format(disk_total_space('/'), 0);
-        $data['sys']['disk_free']    = number_format(disk_free_space('/'), 0);
-    }
+        $data['sys']['disk_total'] = number_format(disk_total_space('/'), 0);
+        $data['sys']['disk_free']  = number_format(disk_free_space('/'), 0);
+
+        $data['sys']['environment'] = getGlobalConfiguration()->getEnvironment();
+        $data['sys']['runstate']    = getGlobalConfiguration()->getRunState();    }
 }
 
 ?>

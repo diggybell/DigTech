@@ -13,6 +13,8 @@ class Configuration
    protected $_config;                       ///< Parsed content of ini file
    protected $_configFile = 'digtech.ini';   ///< Default name of ini file
    protected $_defaultPaths = [];            ///< Default paths to search for ini file
+   protected $_environment = '';             ///< The environment level application is running in (prod/qa/dev)
+   protected $_runstate = '';                ///< The application is active or inactive
    
    /**
     * \brief Object constructor
@@ -39,6 +41,9 @@ class Configuration
       {
          $globalConfiguration = $this;
       }
+
+      $this->_environment = $this->_config['global']['environment'];
+      $this->_runstate = $this->_config['global']['runstate'];
    }
 
    /**
@@ -91,6 +96,29 @@ class Configuration
       }
 
       return $ret;
+   }
+
+   /**
+    * \brief Retrieve environment
+    * \retval prod This is the production environment
+    * \retval qa This is the qa environment
+    * \retval dev This is thd development environment
+    * \returns The environment application is running in
+    */
+   public function getEnvironment()
+   {
+      return $this->_config['global']['environment'];
+   }
+
+   /**
+    * \brief Retrieve application run state
+    * \retval active The application is running and should process requests
+    * \retval inactivce The application is not running and should not process requests
+    * \returns The run state for the application
+    */
+   public function getRunState()
+   {
+      return $this->_config['global']['runstate'];
    }
 }
 
