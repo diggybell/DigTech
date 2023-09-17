@@ -67,10 +67,10 @@ class ActionEnvelope
  */
 class ActionClassOrder
 {
-    public $salesorder;
-    public $customernumber;
-    public $saledate;
-    public $status;
+    public $salesorder;     ///< Sales order number
+    public $customernumber; ///< Customer number
+    public $saledate;       ///< Sale date
+    public $status;         ///< Order status
 
     /**
      * \brief Object constructor
@@ -95,10 +95,10 @@ class ActionClassOrder
  */
 class ActionOrderDetails
 {
-    public $action;
-    public $source;
-    public $status;
-    public $timestamp;
+    public $action;     ///< Action type
+    public $source;     ///< The application/source method (API/File)
+    public $status;     ///< The status of the action
+    public $timestamp;  ///< Timestamp for action
 
     /**
      * \brief Object constructor
