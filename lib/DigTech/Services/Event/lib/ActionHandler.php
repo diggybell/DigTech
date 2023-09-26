@@ -1,13 +1,13 @@
 <?php
 
-namespace DigTech\Services\ActionManager;
+namespace DigTech\Services\EventManager;
 
 /**
- * \class ActionHandler
+ * \class EventHandler
  * \ingroup Services
- * \brief The class is the base class for all action handlers
+ * \brief The class is the base class for all event handlers
  */
-class ActionHandler
+class EventHandler
 {
     /**
      * \brief Object constructor
@@ -24,7 +24,7 @@ class ActionHandler
     }
 
     /**
-     * \brief Process action
+     * \brief Process event
      */
     public function process()
     {

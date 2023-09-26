@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS actionmgr;
-CREATE DATABASE actionmgr;
-USE actionmgr;
+DROP DATABASE IF EXISTS eventmgr;
+CREATE DATABASE eventmgr;
+USE eventmgr;
 
-CREATE TABLE action_class
+CREATE TABLE event_class
 (
     class_seq               INTEGER         NOT NULL AUTO_INCREMENT,
     class_code              VARCHAR(10)     NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE action_class
     PRIMARY KEY(class_seq)
 ) ENGINE=InnoDB;
 
-CREATE TABLE action_performer
+CREATE TABLE event_performer
 (
     performer_seq           INTEGER         NOT NULL AUTO_INCREMENT,
     performer_code          VARCHAR(10)     NOT NULL,
@@ -30,32 +30,32 @@ CREATE TABLE action_performer
     PRIMARY KEY(performer_seq)
 ) ENGINE=InnoDB;
 
-CREATE UNIQUE INDEX action_performer_code_ndx
-    ON action_performer(performer_code);
+CREATE UNIQUE INDEX event_performer_code_ndx
+    ON event_performer(performer_code);
 
-CREATE UNIQUE INDEX action_class_code_ndx
-    ON action_class(class_code);
+CREATE UNIQUE INDEX event_class_code_ndx
+    ON event_class(class_code);
 
-CREATE TABLE action_log
+CREATE TABLE event_log
 (
-    action_seq              INTEGER         NOT NULL AUTO_INCREMENT,
+    event_seq              INTEGER         NOT NULL AUTO_INCREMENT,
     class_seq               INTEGER         NOT NULL,
     performer_seq           INTEGER         NOT NULL,
-    action_timestamp        DATETIME,
-    action_processed        DATETIME        DEFAULT NULL,
-    action_payload          TEXT            NOT NULL,
+    event_timestamp        DATETIME,
+    event_processed        DATETIME        DEFAULT NULL,
+    event_payload          TEXT            NOT NULL,
 
     create_by               VARCHAR(40)     DEFAULT NULL,
     create_date             DATETIME        DEFAULT NULL,
     modify_by               VARCHAR(40)     DEFAULT NULL,
     modify_date             DATETIME        DEFAULT NULL,
     
-    PRIMARY KEY(action_seq),
-    FOREIGN KEY(class_seq) REFERENCES action_class(class_seq),
-    FOREIGN KEY(performer_seq) REFERENCES action_performer(performer_seq)
+    PRIMARY KEY(event_seq),
+    FOREIGN KEY(class_seq) REFERENCES event_class(class_seq),
+    FOREIGN KEY(performer_seq) REFERENCES event_performer(performer_seq)
 ) ENGINE=InnoDB;
 
-CREATE INDEX action_log_class_ndx
-    ON action_log(class_seq);
-CREATE INDEX action_log_performer_ndx
-    ON action_log(performer_seq);
+CREATE INDEX event_log_class_ndx
+    ON event_log(class_seq);
+CREATE INDEX event_log_performer_ndx
+    ON event_log(performer_seq);

@@ -1,27 +1,27 @@
 <?php
 
-namespace DigTech\Services\ActionManager;
+namespace DigTech\Services\EventManager;
 
 /**
- * \class ActionEnvelope
+ * \class EventEnvelope
  * \ingroup Services
- * \brief The envelope provides a wrapper around all subsequent action types
+ * \brief The envelope provides a wrapper around all subsequent event types
  * \note The class and details are passed as references to objects. This can be useful when iterating
  * through creation of multiple events
  */
-class ActionEnvelope
+class EventEnvelope
 {
-    public $source;         ///< The source of the action
-    public $timestamp;      ///< The action timestamp
-    public $performer;      ///< The system that performed the action
-    public $class;          ///< The action class name
+    public $source;         ///< The source of the event
+    public $timestamp;      ///< The event timestamp
+    public $performer;      ///< The system that performed the event
+    public $class;          ///< The event class name
 
     /**
      * \brief Object constructor
-     * \param $source The source of the action
-     * \param $timestamp The action timestamp
-     * \param $performer The system that performed the action
-     * \param $class The name of the action class
+     * \param $source The source of the event
+     * \param $timestamp The event timestamp
+     * \param $performer The system that performed the event
+     * \param $class The name of the event class
      */
     public function __construct($source, $timestamp, $performer, $class)
     {
@@ -32,7 +32,7 @@ class ActionEnvelope
     }
 
     /**
-     * \brief Set the action class information
+     * \brief Set the event class information
      * \param $classObj Reference to class object
      */
     public function setClass(&$classObj)
@@ -42,8 +42,8 @@ class ActionEnvelope
     }
 
     /**
-     * \brief Set the action details
-     * \param $detailObj The detail object for the action
+     * \brief Set the event details
+     * \param $detailObj The detail object for the event
      */
     public function setDetail(&$detailObj)
     {
@@ -56,16 +56,16 @@ class ActionEnvelope
      */
     public function toJSON()
     {
-        return json_encode(['action' => $this], JSON_PRETTY_PRINT);
+        return json_encode(['event' => $this], JSON_PRETTY_PRINT);
     }
 }
 
 /**
- * \class ActionClassOrder
+ * \class EventClassOrder
  * \ingroup Services
- * \brief This object describes order class actions
+ * \brief This object describes order class events
  */
-class ActionClassOrder
+class EventClassOrder
 {
     public $salesorder;     ///< Sales order number
     public $customernumber; ///< Customer number
@@ -89,27 +89,27 @@ class ActionClassOrder
 }
 
 /**
- * \class ActionOrderDetails
+ * \class EventOrderDetails
  * \ingroup Services
- * \brief This object contains the details for an action on an order class object
+ * \brief This object contains the details for an event on an order class object
  */
-class ActionOrderDetails
+class EventOrderDetails
 {
-    public $action;     ///< Action type
+    public $evemt;      ///< Event type
     public $source;     ///< The application/source method (API/File)
-    public $status;     ///< The status of the action
-    public $timestamp;  ///< Timestamp for action
+    public $status;     ///< The status of the event
+    public $timestamp;  ///< Timestamp for event
 
     /**
      * \brief Object constructor
-     * \param $action The action that was taken
-     * \param $source The source of the action
-     * \param $status The status of the action
-     * \param $timestamp The time when the action was performed
+     * \param $event The event that was taken
+     * \param $source The source of the event
+     * \param $status The status of the event
+     * \param $timestamp The time when the event was performed
      */
-    public function __construct($action, $source, $status, $timestamp)
+    public function __construct($event, $source, $status, $timestamp)
     {
-        $this->action = $action;
+        $this->event = $event;
         $this->source = $source;
         $this->status = $status;
         $this->timestamp = $timestamp;
@@ -119,10 +119,10 @@ class ActionOrderDetails
 
 /* Unit Tests */
 
-// create and initialize the envelope, action class, and details objects
-$env = new ActionEnvelope('System', '2023-09-11 23:00', 'Import', 'order');
-$class = new ActionClassOrder('SO1000-00001', 'CN100-001', '2023-09-11', 'PENDING');
-$detail = new ActionOrderDetails('OrderReceived', 'API', 'SUCCESS', '2023-09-11 23:00:00');
+// create and initialize the envelope, event class, and details objects
+$env = new EventEnvelope('System', '2023-09-11 23:00', 'Import', 'order');
+$class = new EventClassOrder('SO1000-00001', 'CN100-001', '2023-09-11', 'PENDING');
+$detail = new EventOrderDetails('OrderReceived', 'API', 'SUCCESS', '2023-09-11 23:00:00');
 
 // put the class and details in the envelope
 $env->setClass($class);
@@ -131,7 +131,7 @@ $env->setDetail($detail);
 // verify output of JSON conversion
 printf("%s\n", $env->toJSON());
 
-// change the sales order in the action class object
+// change the sales order in the event class object
 $class->salesorder = 'SO1000-00002';
 
 // validate that the class was passed by reference in the JSON

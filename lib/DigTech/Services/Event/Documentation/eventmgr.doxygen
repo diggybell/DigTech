@@ -1,0 +1,165 @@
+/**
+\page event_docs Event Manager Service
+\ingroup Services
+\section eventmgr_intro Introduction
+
+The Event Manager is a data aggregation service that can be used to capture and associate events that take place in multiple systems across a company
+or enterprise. As one event happens it may influence or trigger additional events. This service acts both the collector of events and the initiator
+for triggered events.
+
+\section eventmgr_concepts Concepts
+
+\li Envelope
+\par
+The Event Envelope contains the details on an event that occurs in the system. It indication information that is common to all events.
+
+\li Source
+\par
+The system where the event was performed.
+
+\li Performer
+\par
+An application that performs events. One example of a performer might be a REST API that receives orders from an external customer. Another
+performer might be the warehouse application that picks the products for the order. A performer will generally be an application or application system
+that implements a portion of a business process.
+
+\li Class
+\par
+An indicator of an event class. A class may have multiple Events (see below). In many cases the class will represent a document or entity that is
+processed by one or more systems. Some examples of classes might be order, shipment, or schedule/route.
+The "class" element should be used to retrieve the class object of the same name from the incoming object.
+\note Event Classes will be common candidates for maintaining a 'current state' for an entity. For example, what is the current status of an order?
+
+\li Details
+\par
+A specific type of event that is performed in the system. The details of the event will be dependent on the event performed.
+
+\section eventmgr_commflow Communication Flow
+
+The model for posting events to the event manager uses a simple HTTP POST event with a JSON payload.
+
+\msc
+    "Application System","Event Manager";
+
+    "Application System" => "Event Manager" [label="POST(JSON)"];
+    "Application System" << "Event Manager" [label="Status"];
+\endmsc
+
+\section eventmgr_json_format JSON Formats
+
+\subsection eventmgr_sample Sample Event
+
+\code
+{
+    "event": {
+        "source": "System",
+        "timestamp": "2023-09-11 23:00",
+        "performer": "Import",
+        "class": "order",
+        "order": {
+            "salesorder": "SO1000-00001",
+            "customernumber": "CN100-001",
+            "saledate": "2023-09-11",
+            "status": "PENDING"
+        },
+        "details": {
+            "event": "OrderReceived",
+            "source": "API",
+            "status": "SUCCESS",
+            "timestamp": "2023-09-11 23:00:00"
+        }
+    }
+}
+\endcode
+
+\subsection eventmgr_envelope Event Envelope
+
+\code
+{
+    "event": {
+        "source": "System",
+        "timestamp": "2023-09-11 23:00",
+        "performer": "Import",
+        "class": "order",
+    }
+}
+\endcode
+
+\subsection eventmgr_class Event Class
+
+
+
+\code
+{
+    "event": {
+        "class": "order",
+        "order": {
+            "salesorder": "SO1000-00001",
+            "customernumber": "CN100-001",
+            "saledate": "2023-09-11",
+            "status": "PENDING"
+        },
+    }
+}
+\endcode
+
+\subsection eventmgr_event Event Detail
+
+\code
+{
+    "event": {
+        "details": {
+            "event": "OrderReceived",
+            "source": "API",
+            "status": "SUCCESS",
+            "timestamp": "2023-09-11 23:00:00"
+        }
+    }
+}
+\endcode
+
+\section eventmgr_processing Event Processing
+
+All events will be processed sequentially in the order they were created via the Event API. Several things will take place when the events are processed.
+
+\subsection eventmgr_processing_common Common Processing
+
+The processing for all events will include the following steps.
+
+\li Validate source
+\li Validate event class and retrieve class sequence
+\li Validate event performer and retrieve performer sequence
+\li Update processed timestamp
+
+\subsection eventmgr_processing_class Class Processing
+
+The processing for the event class will consist of aggregation of data to provide a corrent view of an entity.
+
+\li Create or update existing entity
+\li Update entity to reflect the current state
+
+\subsection eventmgr_processing_details Detail Processing
+
+The processing for event details will be dependent on the type of event being performed. There may be updates to the aggregated entity.
+
+\section eventmgr_handler Event Handler
+
+\subsection eventmgr_handler_concept Handler Concepts
+
+Each event handler must be derived from EventHandler and implement three required methods.
+
+\li start()
+This method will be called when the event processor is loaded. This method should be used to
+perform initial setup for the event handler such as connecting to the database and retrieving
+any data required for validation.
+
+\li process()
+This method will be called as each new event is retrieved. This method should contain the
+processing for the event.
+
+\li finish()
+This method will be called after all current events have been processed and before the processor
+terminates. This method is useful for aggregating event data.
+
+
+ */

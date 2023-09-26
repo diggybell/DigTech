@@ -1,11 +1,11 @@
 
-USE actionmgr;
+USE eventmgr;
 
-DROP TRIGGER IF EXISTS action_class_insert;
-DROP TRIGGER IF EXISTS action_class_update;
+DROP TRIGGER IF EXISTS event_class_insert;
+DROP TRIGGER IF EXISTS event_class_update;
 
 DELIMITER $$
-CREATE TRIGGER action_class_insert BEFORE INSERT ON action_class 
+CREATE TRIGGER event_class_insert BEFORE INSERT ON event_class 
    FOR EACH ROW
    BEGIN
       SET NEW.create_date = NOW();
@@ -16,7 +16,7 @@ CREATE TRIGGER action_class_insert BEFORE INSERT ON action_class
 DELIMITER ;
 
 DELIMITER $$
-CREATE TRIGGER action_class_update BEFORE UPDATE ON action_class 
+CREATE TRIGGER event_class_update BEFORE UPDATE ON event_class 
    FOR EACH ROW
    BEGIN
       SET NEW.modify_date = NOW();
@@ -24,13 +24,13 @@ CREATE TRIGGER action_class_update BEFORE UPDATE ON action_class
    END; $$
 DELIMITER ;
 
-USE actionmgr;
+USE eventmgr;
 
-DROP TRIGGER IF EXISTS action_log_insert;
-DROP TRIGGER IF EXISTS action_log_update;
+DROP TRIGGER IF EXISTS event_log_insert;
+DROP TRIGGER IF EXISTS event_log_update;
 
 DELIMITER $$
-CREATE TRIGGER action_log_insert BEFORE INSERT ON action_log 
+CREATE TRIGGER event_log_insert BEFORE INSERT ON event_log 
    FOR EACH ROW
    BEGIN
       SET NEW.create_date = NOW();
@@ -41,7 +41,7 @@ CREATE TRIGGER action_log_insert BEFORE INSERT ON action_log
 DELIMITER ;
 
 DELIMITER $$
-CREATE TRIGGER action_log_update BEFORE UPDATE ON action_log 
+CREATE TRIGGER event_log_update BEFORE UPDATE ON event_log 
    FOR EACH ROW
    BEGIN
       SET NEW.modify_date = NOW();
@@ -49,13 +49,13 @@ CREATE TRIGGER action_log_update BEFORE UPDATE ON action_log
    END; $$
 DELIMITER ;
 
-USE actionmgr;
+USE eventmgr;
 
-DROP TRIGGER IF EXISTS action_performer_insert;
-DROP TRIGGER IF EXISTS action_performer_update;
+DROP TRIGGER IF EXISTS event_performer_insert;
+DROP TRIGGER IF EXISTS event_performer_update;
 
 DELIMITER $$
-CREATE TRIGGER action_performer_insert BEFORE INSERT ON action_performer 
+CREATE TRIGGER event_performer_insert BEFORE INSERT ON event_performer 
    FOR EACH ROW
    BEGIN
       SET NEW.create_date = NOW();
@@ -66,7 +66,7 @@ CREATE TRIGGER action_performer_insert BEFORE INSERT ON action_performer
 DELIMITER ;
 
 DELIMITER $$
-CREATE TRIGGER action_performer_update BEFORE UPDATE ON action_performer 
+CREATE TRIGGER event_performer_update BEFORE UPDATE ON event_performer 
    FOR EACH ROW
    BEGIN
       SET NEW.modify_date = NOW();

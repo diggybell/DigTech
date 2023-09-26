@@ -5,15 +5,15 @@ use DigTech\Logging\Logger as Logger;
 use DigTech\Database\Record as Record;
 
 /**
- * \class post_action
+ * \class post_event
  * \ingroup Services
- * \brief This class provides the REST API to allow creation of new actions.
- * It should be called by all applications and systems that need to create actions.
+ * \brief This class provides the REST API to allow creation of new events.
+ * It should be called by all applications and systems that need to create events.
  */
 
-class post_action extends Resource
+class post_event extends Resource
 {
-    public function __construct($request, $schema='actionmgr')
+    public function __construct($request, $schema='eventmgr')
     {
         parent::__construct($request, $schema);
     }
@@ -22,7 +22,7 @@ class post_action extends Resource
     {
         $ret = 0;
 
-        $sql = sprintf("SELECT class_seq FROM action_class WHERE class_code = '%s'", $class);
+        $sql = sprintf("SELECT class_seq FROM event_class WHERE class_code = '%s'", $class);
         $res = $this->_conn->query($sql);
         if($res)
         {
@@ -38,7 +38,7 @@ class post_action extends Resource
     {
         $ret = 0;
 
-        $sql = sprintf("SELECT performer_seq FROM action_performer WHERE performer_code = '%s'", $performer);
+        $sql = sprintf("SELECT performer_seq FROM event_performer WHERE performer_code = '%s'", $performer);
         $res = $this->_conn->query($sql);
         if($res)
         {
@@ -56,34 +56,34 @@ class post_action extends Resource
         $data = [];
 
         $json = $this->getContent();
-        $action = json_decode($json);
-        if(is_object($action))
+        $event = json_decode($json);
+        if(is_object($event))
         {
-            $classSeq = $this->getClass($action->action->class);
-            $performerSeq = $this->getPerformer($action->action->performer);
+            $classSeq = $this->getClass($event->event->class);
+            $performerSeq = $this->getPerformer($event->event->performer);
 
             if($classSeq > 0 && $performerSeq > 0)
             {
-                $recAction = new Record($this->_conn, 'action_log', ['action_seq' => 0]);
+                $recEvent = new Record($this->_conn, 'event_log', ['event_seq' => 0]);
 
-                $recAction->set('class_seq', $classSeq);
-                $recAction->set('performer_seq', $performerSeq);
+                $recEvent->set('class_seq', $classSeq);
+                $recEvent->set('performer_seq', $performerSeq);
 
-                $recAction->set('action_timestamp', $action->action->timestamp);
-                $recAction->set('action_payload', $json);
+                $recEvent->set('event_timestamp', $event->event->timestamp);
+                $recEvent->set('event_payload', $json);
 
-                if($recAction->insert())
+                if($recEvent->insert())
                 {
                     $status = 'Success';
                 }
                 else
                 {
-                    Logger::error("Unable to insert action into database\n");
+                    Logger::error("Unable to insert event into database\n");
                 }
             }
             else
             {
-                Logger::error("Invalid Class or Performer specified (%s/%s)\n", $action->action->class, $action->action->performer);
+                Logger::error("Invalid Class or Performer specified (%s/%s)\n", $event->event->class, $event->event->performer);
             }
         }
         else
