@@ -43,7 +43,7 @@ if($db->connect())
 //                $recEvent->set('event_processed', date('Y-m-d H:i:s'));
                 if($recEvent->update())
                 {
-                    $processedEvent++;
+                    $processedEvents++;
                 }
                 else
                 {
