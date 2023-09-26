@@ -1,7 +1,7 @@
 <?php
 
-include_once('../../lib/autoload.php');
-include_once('../../lib/autoconfig.php');
+include_once('../../../../../lib/autoload.php');
+include_once('../../../../../lib/autoconfig.php');
 
 use \DigTech\Logging\Logger as Logger;
 use \DigTech\REST\SecureResource as SecureResource;
