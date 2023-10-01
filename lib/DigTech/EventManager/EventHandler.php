@@ -1,6 +1,6 @@
 <?php
 
-namespace DigTech\Services\EventManager;
+namespace DigTech\EventManager;
 
 /**
  * \class EventHandler
@@ -25,8 +25,9 @@ class EventHandler
 
     /**
      * \brief Process event
+     * \param $event Event data to be processed
      */
-    public function process()
+    public function process(&$event)
     {
     }
 

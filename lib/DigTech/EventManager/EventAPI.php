@@ -1,6 +1,6 @@
 <?php
 
-namespace DigTech\Services\EventManager;
+namespace DigTech\EventManager;
 
 /**
  * \class EventEnvelope
