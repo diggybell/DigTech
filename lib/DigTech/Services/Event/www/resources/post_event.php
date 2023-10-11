@@ -59,31 +59,21 @@ class post_event extends Resource
         $event = json_decode($json);
         if(is_object($event))
         {
-            $classSeq = $this->getClass($event->event->class);
-            $performerSeq = $this->getPerformer($event->event->performer);
+            $recEvent = new Record($this->_conn, 'event_log', ['event_seq' => 0]);
 
-            if($classSeq > 0 && $performerSeq > 0)
+            $recEvent->set('class_code', $event->event->class);
+            $recEvent->set('performer_code', $event->event->performer);
+
+            $recEvent->set('event_timestamp', $event->event->timestamp);
+            $recEvent->set('event_payload', $json);
+
+            if($recEvent->insert())
             {
-                $recEvent = new Record($this->_conn, 'event_log', ['event_seq' => 0]);
-
-                $recEvent->set('class_seq', $classSeq);
-                $recEvent->set('performer_seq', $performerSeq);
-
-                $recEvent->set('event_timestamp', $event->event->timestamp);
-                $recEvent->set('event_payload', $json);
-
-                if($recEvent->insert())
-                {
-                    $status = 'Success';
-                }
-                else
-                {
-                    Logger::error("Unable to insert event into database\n");
-                }
+                $status = 'Success';
             }
             else
             {
-                Logger::error("Invalid Class or Performer specified (%s/%s)\n", $event->event->class, $event->event->performer);
+                Logger::error("Unable to insert event into database\n");
             }
         }
         else

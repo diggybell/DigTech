@@ -33,6 +33,9 @@ DELIMITER $$
 CREATE TRIGGER event_log_insert BEFORE INSERT ON event_log 
    FOR EACH ROW
    BEGIN
+      /* Set the partitioning key for monthly partitions */
+      SET NEW.partition_key   = MONTH(NOW());
+
       SET NEW.create_date = NOW();
       SET NEW.create_by   = CURRENT_USER;
       SET NEW.modify_date = '0000-00-00 00:00:00';

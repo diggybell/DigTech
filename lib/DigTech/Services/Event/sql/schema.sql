@@ -38,24 +38,40 @@ CREATE UNIQUE INDEX event_class_code_ndx
 
 CREATE TABLE event_log
 (
-    event_seq              INTEGER         NOT NULL AUTO_INCREMENT,
-    class_seq               INTEGER         NOT NULL,
-    performer_seq           INTEGER         NOT NULL,
-    event_timestamp        DATETIME,
-    event_processed        DATETIME        DEFAULT NULL,
-    event_payload          TEXT            NOT NULL,
+    event_seq               INTEGER         NOT NULL AUTO_INCREMENT,
+    class_code              VARCHAR(10)     NOT NULL,
+    performer_code          VARCHAR(10)     NOT NULL,
+    event_timestamp         DATETIME,
+    event_processed         DATETIME        DEFAULT NULL,
+    event_payload           TEXT            NOT NULL,
+
+    partition_key           INTEGER,
 
     create_by               VARCHAR(40)     DEFAULT NULL,
     create_date             DATETIME        DEFAULT NULL,
     modify_by               VARCHAR(40)     DEFAULT NULL,
     modify_date             DATETIME        DEFAULT NULL,
     
-    PRIMARY KEY(event_seq),
-    FOREIGN KEY(class_seq) REFERENCES event_class(class_seq),
-    FOREIGN KEY(performer_seq) REFERENCES event_performer(performer_seq)
-) ENGINE=InnoDB;
+    PRIMARY KEY(event_seq, partition_key)
+)
+ENGINE=InnoDB
+PARTITION BY LIST(partition_key)
+(
+    PARTITION January VALUES IN (1),
+    PARTITION February VALUES IN (2),
+    PARTITION March VALUES IN (3),
+    PARTITION April VALUES IN (4),
+    PARTITION May VALUES IN (5),
+    PARTITION June VALUES IN (6),
+    PARTITION July VALUES IN (7),
+    PARTITION August VALUES IN (8),
+    PARTITION September VALUES IN (9),
+    PARTITION October VALUES IN (10),
+    PARTITION November VALUES IN (11),
+    PARTITION December VALUES IN (12)
+);
 
 CREATE INDEX event_log_class_ndx
-    ON event_log(class_seq);
+    ON event_log(class_code);
 CREATE INDEX event_log_performer_ndx
-    ON event_log(performer_seq);
+    ON event_log(performer_code);
