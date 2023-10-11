@@ -17,7 +17,8 @@ class DefaultHandler extends Handler
 
     public function process(&$event)
     {
-        Logger::log("DefaultHandler->process()\nSource: %s\nPerformer: %s\nClass: %s\nEvent: %s\n",
+        Logger::log("DefaultHandler->process()\n");
+        Logger::log("Source: %s - Performer: %s - Class: %s - Event: %s\n",
                     $event->event->source,
                     $event->event->performer,
                     $event->event->class,
