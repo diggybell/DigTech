@@ -50,5 +50,3 @@ if(!isset($dtal))
 {
     $dtal = new DigTechAutoloader();
 }
-
-?>

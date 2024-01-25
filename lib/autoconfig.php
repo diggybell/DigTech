@@ -20,5 +20,3 @@ function getGlobalConfiguration()
    }
    return $globalConfiguration;
 }
-
-?>

@@ -477,5 +477,3 @@ class Parser
       return $ret;
    }
 }
-
-?>

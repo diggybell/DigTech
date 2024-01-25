@@ -198,5 +198,3 @@ class CRUDResource extends Resource
       return [ 'status' => $result, 'data' => $data ];
    }
 }
-
-?>

@@ -150,5 +150,3 @@ class Connection extends BaseConnection
 
    }
 }
-
-?>

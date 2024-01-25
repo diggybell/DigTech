@@ -110,5 +110,3 @@ foreach($handlers as $name => $handler)
 }
 
 Logger::log("Event Processing Completed: %d of %d processed\n", $processedEvents, $totalEvents);
-
-?>

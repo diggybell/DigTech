@@ -71,5 +71,3 @@ abstract class SecureResource extends Resource
         return $output;
     }
 }
-
-?>

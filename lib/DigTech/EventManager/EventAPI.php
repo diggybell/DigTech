@@ -138,5 +138,3 @@ $class->salesorder = 'SO1000-00002';
 printf("%s\n", $env->toJSON());
 
 /* End Unit Tests */
-
-?>

@@ -563,5 +563,3 @@ class Record
        return $ret;
     }
   }
-
-?>

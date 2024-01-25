@@ -24,5 +24,3 @@ if($c->connect())
 {
    APIInterface::serviceRequest('/api/v1/');
 }
-
-?>

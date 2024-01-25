@@ -322,5 +322,3 @@ abstract class Resource
       return $this->_file;
    }
 }
-
-?>

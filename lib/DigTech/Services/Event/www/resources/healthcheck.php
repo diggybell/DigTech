@@ -106,5 +106,3 @@ class healthcheck extends SecureResource
         $data['sys']['environment'] = getGlobalConfiguration()->getEnvironment();
         $data['sys']['runstate']    = getGlobalConfiguration()->getRunState();    }
 }
-
-?>

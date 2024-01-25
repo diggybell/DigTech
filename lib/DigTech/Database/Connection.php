@@ -158,5 +158,3 @@ abstract class Connection
     abstract public function escapeString($string);
 
 }
-
-?>

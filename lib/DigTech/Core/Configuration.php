@@ -121,5 +121,3 @@ class Configuration
       return $this->_config['global']['runstate'];
    }
 }
-
-?>

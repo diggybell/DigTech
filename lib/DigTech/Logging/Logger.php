@@ -202,5 +202,3 @@ class Logger
       self::$_fileName = $fileName;
    }
 }
-
-?>

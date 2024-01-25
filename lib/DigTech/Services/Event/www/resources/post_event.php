@@ -84,5 +84,3 @@ class post_event extends Resource
         return ['status'=>$status, 'data'=>$data];
     }
 }
-
-?>

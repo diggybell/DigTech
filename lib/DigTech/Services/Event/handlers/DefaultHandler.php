@@ -30,5 +30,3 @@ class DefaultHandler extends Handler
         Logger::log("DefaultHandler->finish()\n");
     }
 }
-
-?>
