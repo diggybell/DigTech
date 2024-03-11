@@ -28,7 +28,7 @@ abstract class Resource
     * \param $request The request that was received
     * \param $schema The default schema to be used for this API
     */
-   public function __construct($request, $schema='digtech')
+   public function __construct($request, $schema=null)
    {
       $this->_schema = $schema;
 
@@ -66,11 +66,14 @@ abstract class Resource
       global $globalConfiguration;
       $globalConfiguration = getGlobalConfiguration();
 
-      $conn = $globalConfiguration->getSection('db-'.$this->_schema);
+      if($this->_schema !== null)
+      {
+         $conn = $globalConfiguration->getSection('db-'.$this->_schema);
 
-      $this->_conn = new Connection();
-      $this->_conn->configure($conn);
-      $this->_conn->connect();
+         $this->_conn = new Connection();
+         $this->_conn->configure($conn);
+         $this->_conn->connect();
+      }
 
       $this->addVariable('request', 's');
 
