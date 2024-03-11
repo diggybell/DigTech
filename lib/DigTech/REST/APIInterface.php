@@ -33,7 +33,7 @@ class APIInterface
       }
    }
 
-   protected static function phpErrorHandler($errno, $errstr, $file, $line)
+   public static function phpErrorHandler($errno, $errstr, $file, $line)
    {
       if ($errno == E_NOTICE || $errno == E_STRICT || $errno == E_DEPRECATED)
          return false;
