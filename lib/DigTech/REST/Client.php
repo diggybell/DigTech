@@ -2,19 +2,18 @@
 
 namespace DigTech\REST;
 
-include_once('Configuration.php');
 include_once('Logger.php');
 include_once('CurlClient.php');
 
-use DigTech\Core\CurlClient;
-use DigTech\Logging\Logger;
+use \DigTech\Core\CurlClient;
+use \DigTech\Logging\Logger;
 
 /**
-   \class RESTClient
+   \class Client
    \ingroup API
    \brief Implementation for REST API client
  */
-class RESTClient
+class Client
 {
    protected $_curl;       ///< cURL client
    protected $_url;        ///< URL for REST service

@@ -1,9 +1,9 @@
 <?php
 
-$path = '/home/diggy/source/php-lib';
+$path = '/home/diggy/source/digtech/DigTech/lib';
 
-include_once($path . '/lib/autoload.php');
-include_once($path . '/lib/autoconfig.php');
+include_once($path . '/autoload.php');
+include_once($path . '/autoconfig.php');
 
 use \DigTech\Logging\Logger as Logger;
 use \DigTech\Database\MySQL as MyDB;
@@ -24,5 +24,3 @@ if($c->connect())
 {
    APIInterface::serviceRequest('/api/v1/');
 }
-
-?>

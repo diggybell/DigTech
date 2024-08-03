@@ -30,6 +30,11 @@ class healthcheck extends SecureResource
                $password == 'password')
             {
                 $ret = true;
+                Logger::log("API Request Authorized for %s\n", $user);
+            }
+            else
+            {
+                Logger::log("API Request NOT Authorized for %s\n", $user);
             }
         }
 
@@ -44,8 +49,7 @@ class healthcheck extends SecureResource
         $this->getHTTPDInfo($data);
         $this->getDatabaseInfo($data);
         $this->getPHPInfo($data);
-
-        return ['status'=>'Success', 'data'=>$data];
+        return [ 'status' => 'Success', 'data' => $data ];
     }
 
     protected function getHTTPDInfo(&$data)
@@ -108,4 +112,3 @@ class healthcheck extends SecureResource
     }
 }
 
-?>
