@@ -2,11 +2,11 @@
 
 namespace DigTech\REST;
 
-include_once('Logger.php');
-include_once('CurlClient.php');
+//include_once('Logger.php');
+//include_once('CurlClient.php');
 
-use \DigTech\Core\CurlClient;
-use \DigTech\Logging\Logger;
+use \DigTech\Core\CurlClient as CurlClient;
+use \DigTech\Logging\Logger as Logger;
 
 /**
    \class Client
@@ -98,10 +98,11 @@ class Client
     */
    public function getAuthorizationHeader()
    {
-      return base64_encode($this->_username) . '.' .
-             base64_encode($this->_password) . '.' .
-             base64_encode($this->_token) . '.' .
-             base64_encode($this->_appToken);
+      return 'Basic ' .
+             base64_encode($this->_username . ':' .
+                           $this->_password . ':' .
+                           $this->_token . ':' .
+                           $this->_appToken);
    }
 
    /**
