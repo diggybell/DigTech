@@ -2,7 +2,7 @@
 
 namespace DigTech\REST;
 
-use \DigTech\REST\SecureResource as Resource;
+use \DigTech\REST\SecureResource as SecureResource;
 use \DigTech\Database\Record as Record;
 use \DigTech\Logging\Logger as Logger;
 
@@ -12,7 +12,7 @@ use \DigTech\Logging\Logger as Logger;
  * \brief This class provides core CRUD operation support.
  */
 
-class CRUDResource extends Resource
+class CRUDResource extends SecureResource
 {
    protected $_userToDB = [];
    protected $_dbToUser = [];
@@ -24,7 +24,31 @@ class CRUDResource extends Resource
       parent::__construct($request);
    }
 
-   public function GET()
+   protected function isAuthorized()
+   {
+       $ret = false;
+
+       $headers = getallheaders();
+       if(isset($headers['Authorization']))
+       {
+           // get the user/password
+           $credential = $headers['Authorization'];
+           $credential = str_replace('Basic ', '', $credential);
+           $credential = base64_decode($credential);
+           list($user, $password) = explode(':', $credential);
+
+           if($user == 'user' &&
+              $password == 'password')
+           {
+               Logger::log("Credentials accepted for %s\n", $user);
+               $ret = true;
+           }
+       }
+
+       return $ret;
+   }
+
+  public function GET()
    {
       $result = 'Failed';
       $data = array();
