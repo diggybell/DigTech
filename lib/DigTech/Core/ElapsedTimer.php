@@ -8,7 +8,7 @@ namespace DigTech\Core;
  * \brief This class implements a timer based on seconds.
  */
 
- class ElapsedTimer
+class ElapsedTimer
 {
    protected $_start;
    protected $_end;
