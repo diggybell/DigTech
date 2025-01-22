@@ -290,6 +290,24 @@ class Record
        return $rec;
     }
  
+    /**
+     * \brief Return an array containing column data
+     * \returns Array containing column data
+     */
+    function getColumns()
+    {
+       return $this->_columnList;
+    }
+    /**
+     * \brief Return a JSON strong containing column data
+     * \returns JSON string containing column data
+     * @return bool|string
+     */
+    function getJSON()
+    {
+       $json = json_encode($this->_columnList);
+       return $json;
+    }
    /**
     * \brief Read the record from the database
     */
