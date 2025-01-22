@@ -72,7 +72,7 @@ abstract class Resource
 
          $this->_conn = new Connection();
          $this->_conn->configure($conn);
-         $this->_conn->connect();
+//         $this->_conn->connect();
       }
 
       $this->addVariable('request', 's');
