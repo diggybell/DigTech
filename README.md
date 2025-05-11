@@ -5,26 +5,8 @@ PHP classes and tools for REST and Database development.
 This library is intended to provide a high level of functionality is as low of a profile
 as possible.
 
-## REST API Support
+## Installation
+Detailed instructions for installation and operation are available in the Wiki at [GitHub](https://github.com/diggybell/digtech/wiki)
 
-### REST API Resource
-
-### REST API Client
-
-## Database Support
-
-### Connection Object
-
-### Record Object
-
-## Handy Components
-
-## Logging
-
-## Configuration
-
-## Services
-
-### Event Management
-
-### Message Assurance
+## Technical Documentation
+Detailed technical information for PiAware Tools is available at [Doxygen.DiggyBell.com](https://doxygen.diggybell.com/digtech)
