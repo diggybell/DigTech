@@ -1,0 +1,40 @@
+/**
+\page msgstore_docs Message Store Service
+\ingroup Services
+\section msgstore_intro Introduction
+
+The MessageStore service provides a database-backed message sending mechanism with write-through persistence. In addition the write-through supports
+resending of failed messages with nothing else required from the application.
+
+\section msgstore_concepts Concepts
+
+\li Endpoint
+\par The endpoint will maintain the API endpoint and credentials with configuration in a central database.
+
+\li Message
+\par
+An HTTP/HTTPS payload to be sent to the endpoint. This should generally be a JSON document.
+
+\li Send Status
+\par
+Will be updated on the initial send and will trigger retries if required.
+
+\subsection msgstore_concepts_endpoint Endpoint Details
+
+The endpoint will contain the following elements.
+
+\li Hostname
+\li Target URI
+\li Credential method
+\li Username/Password
+\li Security Token(s)
+
+\subsection msgstore_concepts_message
+
+The source message will be provided by the calling application.
+
+\subsection msgstore_concepts_sendstatus
+
+The send status will be used to control retry logic if applicable.
+
+ */
