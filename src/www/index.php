@@ -7,10 +7,12 @@
 
 <?php
 
-$path = '/home/diggy/source/php-lib';
+//$path = '/home/diggy/source/php-lib';
+//include_once($path . '/lib/autoload.php');
+//include_once($path . '/lib/autoconfig.php');
 
-include_once($path . '/lib/autoload.php');
-include_once($path . '/lib/autoconfig.php');
+include_once('autoload.php');
+include_once('autoconfig.php');
 
 use \DigTech\Logging\Logger as Logger;
 use \DigTech\Database\MySQL as MyDB;
