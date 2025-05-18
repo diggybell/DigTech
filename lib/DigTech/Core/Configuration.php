@@ -47,9 +47,9 @@ class Configuration
    }
 
    /**
-    * \brief Retrieve all configuration parameters from section as associative array
+    * \brief Retrieve all configuration parameters from section as an object
     * \param $section The name of the ini section to retrieve
-    * \returns Associative array containing configuration parameters
+    * \returns Object containing configuration parameters
     */
    public function getSection($section)
    {
